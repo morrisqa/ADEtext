@@ -1,3 +1,3 @@
-# My Great Book
+# An Advanced Differential Equations Textbook
 
-Visit <https://pretextbook.org/documentation.html> to learn more.
+Authored using PreTeXt. Visit <https://pretextbook.org/documentation.html> to learn more.
