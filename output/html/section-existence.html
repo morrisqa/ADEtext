@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-04-15T11:41:14-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Motivating Examples</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Differential Equations">
+<meta property="book:author" content="Quinn A. Morris, Ph.D.">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Advanced Differential Equations:</span> <span class="subtitle">Theory of Initial &amp; Boundary Value Problems</span></a></h1>
+<p class="byline">Quinn A. Morris, Ph.D.</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_first.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-existencethms.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_first.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-existencethms.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="meta_frontmatter-preface.html" data-scroll="meta_frontmatter-preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Initial Value Problems</span></a><ul>
+<li><a href="section-existence.html" data-scroll="section-existence" class="active">Motivating Examples</a></li>
+<li><a href="sec-existencethms.html" data-scroll="sec-existencethms" class="internal">Existence Theorems</a></li>
+<li><a href="ex_first.html" data-scroll="ex_first" class="internal">My Exercises</a></li>
+</ul>
+</li>
+<li class="link"><a href="ch_empty.html" data-scroll="ch_empty" class="internal"><span class="codenumber">2</span> <span class="title">(No title)</span></a></li>
+<li class="link">
+<a href="ch_features.html" data-scroll="ch_features" class="internal"><span class="codenumber">3</span> <span class="title">Examples of PreTeXt features</span></a><ul>
+<li><a href="sec_features-blocks.html" data-scroll="sec_features-blocks" class="internal">Environments and Blocks</a></li>
+<li><a href="sec_features-other.html" data-scroll="sec_features-other" class="internal">Another section</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></li>
+<li class="link"><a href="solutions-2.html" data-scroll="solutions-2" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="section-existence"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Motivating Examples</span>
+</h2>
+<p id="p-7">In a first course in differential equations, the question of the existence of a solution is often moot, because one can demonstrate the existence simply by writing down the solution.</p>
+<article class="example example-like" id="ex1"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex1"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex1"><article class="example example-like"><p id="p-8">Show that the differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{ \begin{array}{l} y''=y \\ y(0)=0 \\ y'(0)=3 \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">has a solution.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<p id="p-9">Since the differential equation <span class="process-math">\(y''=y\)</span> is linear with constant coefficients, we could consider its characteristic equation, find the roots, and use those to write down a solution.  The initial conditions would then be used to find unknown constants.</p>
+<p id="p-10">For this problem, however, such a method is likely unnecessary.  We may observe that we know two linearly independent functions, namely <span class="process-math">\(y_1(x)=\sin(x)\)</span> and <span class="process-math">\(y_2(x)=\cos(x)\text{,}\)</span> which satisfy <span class="process-math">\(y''=y\text{.}\)</span>  Hence, any solution must be of the form <span class="process-math">\(y(t)=c_1y_1(t) + c_2y_2(t)\text{,}\)</span> and the initial conditions are again used to find the unknown constants <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\text{.}\)</span></p>
+<p id="p-11">In this case, the reader should find that <span class="process-math">\(y(t)=3\sin(t)\)</span> is a solution.  What is harder to show is that this is the <em class="emphasis">only</em>  solution.</p>
+</div></div>
+</div></article></div>
+<p id="p-12">While the existence of a solution can be demonstrated by simply writing down a candidate and showing that it satisfies the initial value problem, it is harder to know whether the solution you have found is the <em class="emphasis">only</em> solution.  In a first course in differential equations, you may have enountered such problems.</p>
+<article class="example example-like" id="ex2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex2"><article class="example example-like"><p id="p-13">Show that the differential equation</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">has two solutions.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<p id="p-14">This is a classic example of a separable differential equation.  To find the solution, rewrite the differential equation as</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="nonuniqueexample">
+\begin{equation}
+\frac{y'}{y^\frac{2}{3}}=1,\tag{1.1.1}
+\end{equation}
+</div>
+<p class="continuation">which is only valid if <span class="process-math">\(y\neq0\text{.}\)</span>  Note that <span class="process-math">\(y_1(x)=0\)</span> is indeed a solution to the differential equation.</p>
+<p id="p-15">If <span class="process-math">\(y\neq0\text{,}\)</span> then we may integrate both sides of <a href="" class="xref" data-knowl="./knowl/nonuniqueexample.html" title="Equation 1.1.1">(1.1.1)</a> with respect to <span class="process-math">\(x\)</span> from <span class="process-math">\(0\)</span> to <span class="process-math">\(t\text{.}\)</span>  Then on the left hand side we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/nonuniqueexample.html">
+\begin{equation*}
+\int_0^t \frac{y'}{y^\frac{2}{3}}\; dx= \int_{y_2(0)}^{y_2(t)} \frac{1}{y^\frac{2}{3}} \; dy= \left. 3 (y(t))^\frac{1}{3}\right|_{y_2(0)}^{y_2(t)} = 3(y_2(t))^\frac{1}{3},
+\end{equation*}
+</div>
+<p class="continuation">while on the right hand side, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/nonuniqueexample.html">
+\begin{equation*}
+\int_0^t 1\; dx = t.
+\end{equation*}
+</div>
+<p class="continuation">Hence, our solution is <span class="process-math">\(3(y_2(t))^\frac{1}{3}=t\text{,}\)</span> or equivalently <span class="process-math">\(y_2(t)=\frac{1}{27}t^3\text{.}\)</span></p>
+</div></div>
+</div></article></div>
+<p id="p-16">From these two examples, we see that there are three important questions you might ask about an initial value problem:</p>
+<ol class="decimal">
+<li id="li-1"><p id="p-17">Does the IVP have a solution?  This is the question of <em class="alert">existence</em>.</p></li>
+<li id="li-2"><p id="p-18">If the IVP has a solution, is there only one solution? This is the question of  <em class="alert">uniqueness</em>.</p></li>
+<li id="li-3"><p id="p-19">If the IVP has a solution which is not unique, how many solutions are there? This is the question of <em class="alert">multiplicity</em>.</p></li>
+</ol>
+<p id="p-20">From our examples thus far, however, we have answered these questions only partially.  In <a href="" class="xref" data-knowl="./knowl/ex1.html" title="Example 1.1.1">Example 1.1.1</a>, we proved existence of a solution, but did not establish uniqueness.  In <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a>, we proved nonuniqueness, but did not definitely answer the question of multiplicity (though we did provide a lower bound on the number of solutions).</p>
+<p id="p-21">In any event, we are in a considerable amount of trouble if our only methods for dealing with these questions rely on writing down explicit solutions.  In fact, even simple differential equations of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/kovacic1987.html">
+\begin{equation*}
+y''+a(t)y'+b(t)y=0
+\end{equation*}
+</div>
+<p class="continuation">may not have solutions expressible in terms of elementary (trigonometric, exponential, logarithmic, polynomial, etc.) functions.  The interested reader is directed to <a href="" class="xref" data-knowl="./knowl/kovacic1987.html" title="Bibliographic Entry 1: An algorithm for solving second order linear homogeneous differential equations.">[1]</a> for an in-depth discussion of when such equations do and do not have elementary solutions.</p>
+<p id="p-22">Moving forward, we wish to address the questions of existence, uniqueness, and multiplicity for initial value problems first, and then subsequently for a new type of problem, called a boundary value problem.</p></section></div></main>
+</div>
+</body>
+</html>

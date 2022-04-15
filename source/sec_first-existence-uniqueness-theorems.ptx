@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-existencethms">
+  <title>Existence Theorems</title>
+   <definition xml:id="def-lipschitz">
+    <statement>
+      <p>
+        A function <m>\vec{f}:D\to\mathbb{R}^n</m> is said to satisfy a <em>Lipschitz condition with respect to <m>x</m> </em> on the open set <m>D \subset \mathbb{R} \times \mathbb{R}^n</m> if, for any rectangle
+        <me>
+          \Omega:=\{(t,\vec{x}) \mid |t-t_0|\le a, \; \|\vec{x}-\vec{x}_0\| \le b \} \subset D,
+        </me>
+        there exists a constant <m>K</m> (depending on <m>\Omega</m>) such that
+        <me>
+          \|\vec{f}(t,\vec{x})-\vec{f}(t,\vec{y})\|\le K\|\vec{x}-\vec{y}\|
+        </me>
+        for all <m>(t,\vec{x}),(t,\vec{y}) \in \Omega</m>.
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="thm-picard">
+    <statement>
+      <p>Consider the differential equation
+        <men xml:id="eq-picard">
+          \left\{ \begin{array}{l} \vec{x}^\prime = \vec{f}(t,\vec{x}) \\ \vec{x}(\alpha)=\vec{\beta} \end{array} \right.
+        </men>
+        where <m>\alpha \in \mathbb{R}</m>, <m>\vec{\beta}\in \mathbb{R}^n</m>, and <m>\vec{f}:D \to \mathbb{R}^n</m> is a continuous function defined on an open set <m>D \subset \mathbb{R}^{n+1}</m> containing <m>(\alpha,\vec{\beta})</m>.</p>
+
+        <p>
+          If <m>\vec{f}</m> satisfies a Lipschitz condition  with respect to <m>x</m>, then <xref ref="eq-picard" /> has a unique solution in a neighborhood of <m>t=\alpha</m>.
+        </p>
+    </statement>
+  </theorem>
+</section>
