@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exercises</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Advanced Differential Equations">
+<meta property="book:author" content="Quinn A. Morris, Ph.D.">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="ADEtext.html"><span class="title">Advanced Differential Equations:</span> <span class="subtitle">Theory of Initial &amp; Boundary Value Problems</span></a></h1>
+<p class="byline">Quinn A. Morris, Ph.D.</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-existencethms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="meta_backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-existencethms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="meta_backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="meta_frontmatter.html" data-scroll="meta_frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li></ul>
+</li>
+<li class="link">
+<a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Initial Value Problems</span></a><ul>
+<li><a href="section-existence.html" data-scroll="section-existence" class="internal">Motivating Examples</a></li>
+<li><a href="sec-existencethms.html" data-scroll="sec-existencethms" class="internal">Existence &amp; Uniquess Theorem</a></li>
+<li><a href="ex_first.html" data-scroll="ex_first" class="active">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="meta_backmatter.html" data-scroll="meta_backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></li>
+<li class="link"><a href="solutions-2.html" data-scroll="solutions-2" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></li>
+<li class="link"><a href="references-1.html" data-scroll="references-1" class="internal"><span class="title">References</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="exercises" id="ex_first"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.3</span> <span class="title">Exercises</span>
+</h2>
+<div class="exercisegroup" id="exercisegroup-1">
+<h3 class="heading"><span class="title">Single Equations &amp; Systems.</span></h3>
+<div class="introduction" id="introduction-2">Convert each of the following higher order differential equations into a first order system of differential equations.</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-34">The second order differential equation given in <a href="" class="xref" data-knowl="./knowl/ex1.html" title="Example 1.1.1">Example 1.1.1</a>.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><p id="p-35"></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-36">The second order differential equation given in <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a>.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><p id="p-37"></p></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-2">
+<h3 class="heading"><span class="title">Initial &amp; Other Values.</span></h3>
+<div class="introduction" id="introduction-3">Consider the initial value problem<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{ \begin{array}{l} y''=|y|\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+\end{equation*}
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-38">Find a solution for <span class="process-math">\(t&gt;0\)</span> each value of <span class="process-math">\(m\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-39">It may be helpful to consider cases where <span class="process-math">\(m&gt;0\text{,}\)</span> <span class="process-math">\(m=0\text{,}\)</span> and <span class="process-math">\(m &lt; 0\text{.}\)</span>  This will allow you to simplify <span class="process-math">\(|y|\)</span> at least near <span class="process-math">\(t=0\text{.}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like">
+<p id="p-40">If <span class="process-math">\(m&gt;0\text{,}\)</span> the solution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y(t)=\left\{ \begin{array}{ll} m \sin (t) &amp; 0 &lt; t \le pi, \\ -m \sinh(t-\pi) &amp; t &gt; \pi.  \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">If <span class="process-math">\(m &lt; 0\text{,}\)</span> the solution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+y(t)= m \sinh (t).
+\end{equation*}
+</div>
+<p class="continuation">If <span class="process-math">\(m=0\text{,}\)</span> the solution is <span class="process-math">\(y(t)=0\)</span></p>
+</div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<p id="p-41">Note that if <span class="process-math">\(m&gt;0\text{,}\)</span> then since <span class="process-math">\(y(0)=0\text{,}\)</span> <span class="process-math">\(y(t)&gt;0\)</span> on <span class="process-math">\((0,\epsilon)\)</span> for some <span class="process-math">\(\epsilon&gt;0\text{.}\)</span>  Hence, <span class="process-math">\(|y(t)|=y(t)\text{,}\)</span> and our differential equation simplifies to</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex1.html">
+\begin{equation*}
+\left\{ \begin{array}{l} y''=y\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">so long as <span class="process-math">\(y(t)\ge 0\text{.}\)</span>  Similar to <a href="" class="xref" data-knowl="./knowl/ex1.html" title="Example 1.1.1">Example 1.1.1</a>, the solution is <span class="process-math">\(y(t)=m\sin(t)\)</span> so long as <span class="process-math">\(0 &lt; t &lt; \pi \text{.}\)</span>  When <span class="process-math">\(t=\pi\text{,}\)</span> we find that <span class="process-math">\(y(\pi)=0\)</span> and <span class="process-math">\(y'(\pi)=-m\text{.}\)</span>  So we may now consider the initial value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex1.html">
+\begin{equation*}
+\left\{ \begin{array}{l} y''=-y\\ y(\pi)=0 \\ y'(\pi)=-m \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">since <span class="process-math">\(y(\pi)=0\)</span> and <span class="process-math">\(y'(\pi)=-m &lt; 0\)</span> implies that <span class="process-math">\(y(t) &lt; 0 \)</span> for <span class="process-math">\(t&gt;\pi\text{,}\)</span> so that <span class="process-math">\(|y(t)|=-y(t)\text{.}\)</span>  However, this gives us the solution <span class="process-math">\(y(t)=-m \sinh (t-\pi)\)</span> for <span class="process-math">\(t&gt;\pi\text{.}\)</span>  This solution remains negative for all <span class="process-math">\(t&gt;\pi\text{,}\)</span> and hence we need not consider the solution further.  Combining our two results gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex1.html">
+\begin{equation*}
+y(t)=\left\{ \begin{array}{ll} m \sin (t) &amp; 0 &lt; t \le pi, \\ -m \sinh(t-\pi) &amp; t &gt; \pi.  \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">when <span class="process-math">\(m&gt;0\)</span></p>
+<p id="p-42">If <span class="process-math">\(m=0\text{,}\)</span> then <span class="process-math">\(y(t)=0\)</span> is a solution to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{ \begin{array}{l} y''=y\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+\end{equation*}
+</div>
+<p id="p-43">If <span class="process-math">\(m &lt; 0\text{,}\)</span> then <span class="process-math">\(y(0)=0\)</span> and <span class="process-math">\(y'(0)=m &lt; 0\)</span> imply that <span class="process-math">\(y(t) &lt; 0\)</span> on <span class="process-math">\((0,\epsilon)\)</span> for some <span class="process-math">\(\epsilon&gt;0\text{.}\)</span>  Hence, <span class="process-math">\(|y(t)|=-y(t)\text{,}\)</span> and our differential equation simplifies to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{ \begin{array}{l} y''=-y\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">so long as <span class="process-math">\(y(t)\le 0\text{.}\)</span>  But <span class="process-math">\(y(t)=m \sin(t)\)</span> is a solution which remains negative for all <span class="process-math">\(t&gt;0\text{.}\)</span>  Hence it is the solution for all <span class="process-math">\(t&gt;0\text{.}\)</span></p>
+<p id="p-44">By <a href="" class="xref" data-knowl="./knowl/thm-picard.html" title="Theorem 1.2.4: Picard's Existence &amp; Uniqueness Theorem">Theorem 1.2.4</a>, each of these solutions is unique.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-45">Find all values of <span class="process-math">\(m\)</span> for which a solution exists which satifies the additional constraint <span class="process-math">\(y\left( \frac{\pi}{2} \right)=4\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-46">Sketching graphs of the different solutions based on cases <span class="process-math">\(m&gt;0\text{,}\)</span> <span class="process-math">\(m=0\text{,}\)</span> and <span class="process-math">\(m &lt; 0\)</span> and think about <span class="process-math">\(m\)</span> as a scaling factor.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<p id="p-47">Find all values of <span class="process-math">\(m\)</span> for which a solution exists which satifies the additional constraint <span class="process-math">\(y\left( \frac{3\pi}{2} \right)=4\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-48">Sketching graphs of the different solutions based on cases <span class="process-math">\(m&gt;0\text{,}\)</span> <span class="process-math">\(m=0\text{,}\)</span> and <span class="process-math">\(m &lt; 0\)</span> and think about <span class="process-math">\(m\)</span> as a scaling factor.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-49">Find all values of <span class="process-math">\(m\)</span> for which a solution exists which satifies the additional constraint <span class="process-math">\(y\left( \frac{3\pi}{2} \right)=-4\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><p id="p-50">Sketching graphs of the different solutions based on cases <span class="process-math">\(m&gt;0\text{,}\)</span> <span class="process-math">\(m=0\text{,}\)</span> and <span class="process-math">\(m &lt; 0\)</span> and think about <span class="process-math">\(m\)</span> as a scaling factor.</p></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-3">
+<h3 class="heading"><span class="title">Lipschitz Functions.</span></h3>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="lipex"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<p id="p-51">Prove that if <span class="process-math">\(f\)</span> is differentiable for all <span class="process-math">\(x \in \mathbb{R}\)</span> and <span class="process-math">\(f'(x)\)</span> is uniformly bounded, then <span class="process-math">\(f\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(x\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><p id="p-52">Since <span class="process-math">\(f'(x)\)</span> is uniformly bounded, there exists some <span class="process-math">\(K\)</span> such that <span class="process-math">\(|f'(x)|\le K\)</span> for all <span class="process-math">\(x\in\mathbb{R}\text{.}\)</span>  By Taylor's Theorem, <span class="process-math">\(|f(x_2)-f(x_1)| = |f'(\xi)| |x_2-x_1| \le K|x_2-x_1|\)</span> which proves that <span class="process-math">\(f\)</span> is Lipschitz with respect to <span class="process-math">\(x\text{.}\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-53">Show that the converse of <a href="" class="xref" data-knowl="./knowl/lipex.html" title="Exercise 1.3.7">Exercise 1.3.7</a> is false by finding a function <span class="process-math">\(f:\mathbb{R} \to \mathbb{R}\)</span> which satisfies a Lipschitz condition with respect to <span class="process-math">\(x\)</span> but is not differentiable for all <span class="process-math">\(x\in\mathbb{R}\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><p id="p-54">Consider <span class="process-math">\(f(x)=|x|\text{.}\)</span> Then <span class="process-math">\(|f(x_2)-f(x_1)|= ||x|-|y||\le |x-y|\)</span> by the Reverse Triangle Inequality. So <span class="process-math">\(f\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(x\)</span> (the Lipschitz constant is <span class="process-math">\(1\)</span>), but <span class="process-math">\(f\)</span> is not differentiable at <span class="process-math">\(x=0\text{.}\)</span></p></div></div>
+</div></article>
+</div>
+</div></section></div></main>
+</div>
+</body>
+</html>

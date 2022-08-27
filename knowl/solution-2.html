@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.1.2.1</span><span class="period">.</span>
+</h3>
+<p>This is a classic example of a separable differential equation.  To find the solution, rewrite the differential equation as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation}
+\frac{y'}{y^\frac{2}{3}}=1,\tag{1.1.1}
+\end{equation}
+</div>
+<p class="continuation">which is only valid if <span class="process-math">\(y\neq0\text{.}\)</span>  Note that <span class="process-math">\(y_1(x)=0\)</span> is indeed a solution to the differential equation.</p>
+<p>If <span class="process-math">\(y\neq0\text{,}\)</span> then we may integrate both sides of <a href="" class="xref" data-knowl="./knowl/nonuniqueexample.html" title="Equation 1.1.1">(1.1.1)</a> with respect to <span class="process-math">\(x\)</span> from <span class="process-math">\(0\)</span> to <span class="process-math">\(t\text{.}\)</span>  Then on the left hand side we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/nonuniqueexample.html">
+\begin{equation*}
+\int_0^t \frac{y'}{y^\frac{2}{3}}\; dx= \int_{y_2(0)}^{y_2(t)} \frac{1}{y^\frac{2}{3}} \; dy= \left. 3 (y(t))^\frac{1}{3}\right|_{y_2(0)}^{y_2(t)} = 3(y_2(t))^\frac{1}{3},
+\end{equation*}
+</div>
+<p class="continuation">while on the right hand side, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/nonuniqueexample.html">
+\begin{equation*}
+\int_0^t 1\; dx = t.
+\end{equation*}
+</div>
+<p class="continuation">Hence, our solution is <span class="process-math">\(3(y_2(t))^\frac{1}{3}=t\text{,}\)</span> or equivalently <span class="process-math">\(y_2(t)=\frac{1}{27}t^3\text{.}\)</span></p>
+</div>
+<span class="incontext"><a href="section-existence.html#solution-2" class="internal">in-context</a></span>
+</body>
+</html>
