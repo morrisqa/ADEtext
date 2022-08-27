@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<chapter xml:id="ch_first" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>Initial Value Problems</title>
+  <!-- If the chapter has sections, there may be an introduction -->
+  <!-- before those sections. Note the <p> tags around content.  -->
+  <introduction>
+    <p>In this chapter, we will recount some results dealing with initial value problems which you are likely to have encountered in a first course in differential equations.  As happens in math, the very powerful theorems we are able to prove about the existence and uniqueness of solutions to initial value problems make them rather dull to study.  Nevertheless, we will take advantage of their nice properties later own when studying more difficult types of problems.</p>
+  </introduction>
+
+  <!-- Sections can be written directly here, but it might help  -->
+  <!-- with organization to include them as separate files.      -->
+  <!-- That way it is easy to include the section in a different -->
+  <!-- chapter later if you change your mind about the order.    -->
+  <xi:include href="./sec_first-motivating-example.ptx" />
+  <xi:include href="./sec_first-existence-uniqueness-theorems.ptx" />
+
+  <!-- One or more of the sections of a chapter might be exercises-->
+  <xi:include href="./ex_first.ptx"/>
+</chapter>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exercises xml:id="ex_first" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- You can ommit the title and just get the default "Exercises" -->
+  <title>Exercises</title>
+  <exercisegroup>
+    <title>Single Equations &amp; Systems</title>
+    <introduction>
+      Convert each of the following higher order differential equations into a first order system of differential equations.
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          The second order differential equation given in <xref ref="ex1" />.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The second order differential equation given in <xref ref="ex2" />.
+        </p>
+      </statement>
+      <solution>
+        <p>
+
+        </p>
+      </solution>
+    </exercise>
+  </exercisegroup>
+<exercisegroup>
+  <title>Initial &amp; Other Values</title>
+  <introduction>
+    Consider the initial value problem
+    <me>
+      \left\{ \begin{array}{l} y''=|y|\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+    </me>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        Find a solution for <m>t>0</m> each value of <m>m</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        It may be helpful to consider cases where <m>m>0</m>, <m>m=0</m>, and <m>m &lt; 0</m>.  This will allow you to simplify <m>|y|</m> at least near <m>t=0</m>.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        If <m>m>0</m>, the solution is
+        <me>
+          y(t)=\left\{ \begin{array}{ll} m \sin (t) &amp; 0 &lt; t \le pi, \\ -m \sinh(t-\pi) &amp; t &gt; \pi.  \end{array} \right.
+        </me>
+        If <m>m &lt; 0</m>, the solution is
+        <me>
+          y(t)= m \sinh (t).
+        </me>
+        If <m>m=0</m>, the solution is <m>y(t)=0</m>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Note that if <m>m>0</m>, then since <m>y(0)=0</m>, <m>y(t)>0</m> on <m>(0,\epsilon)</m> for some <m>\epsilon>0</m>.  Hence, <m>|y(t)|=y(t)</m>, and our differential equation simplifies to
+        <me>
+          \left\{ \begin{array}{l} y''=y\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+        </me>
+        so long as <m>y(t)\ge 0</m>.  Similar to <xref ref="ex1"/>, the solution is <m>y(t)=m\sin(t)</m> so long as <m>0 &lt; t &lt; \pi </m>.  When <m>t=\pi</m>, we find that <m>y(\pi)=0</m> and <m>y'(\pi)=-m</m>.  So we may now consider the initial value problem
+        <me>
+          \left\{ \begin{array}{l} y''=-y\\ y(\pi)=0 \\ y'(\pi)=-m \end{array} \right.
+        </me>
+        since <m>y(\pi)=0</m> and <m>y'(\pi)=-m &lt; 0</m> implies that <m>y(t) &lt; 0 </m> for <m>t>\pi</m>, so that <m>|y(t)|=-y(t)</m>.  However, this gives us the solution <m>y(t)=-m \sinh (t-\pi)</m> for <m>t>\pi</m>.  This solution remains negative for all <m>t>\pi</m>, and hence we need not consider the solution further.  Combining our two results gives
+        <me>
+          y(t)=\left\{ \begin{array}{ll} m \sin (t) &amp; 0 &lt; t \le pi, \\ -m \sinh(t-\pi) &amp; t &gt; \pi.  \end{array} \right.
+        </me>
+        when <m>m>0</m>
+      </p>
+
+      <p>
+        If <m>m=0</m>, then <m>y(t)=0</m> is a solution to
+        <me>
+          \left\{ \begin{array}{l} y''=y\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+        </me>
+      </p>
+
+      <p>
+        If <m>m &lt; 0</m>, then <m>y(0)=0</m> and <m>y'(0)=m &lt; 0</m> imply that <m>y(t) &lt; 0</m> on <m>(0,\epsilon)</m> for some <m>\epsilon>0</m>.  Hence, <m>|y(t)|=-y(t)</m>, and our differential equation simplifies to
+        <me>
+          \left\{ \begin{array}{l} y''=-y\\ y(0)=0 \\ y'(0)=m \end{array} \right.
+        </me>
+        so long as <m>y(t)\le 0</m>.  But <m>y(t)=m \sin(t)</m> is a solution which remains negative for all <m>t>0</m>.  Hence it is the solution for all <m>t>0</m>.
+      </p>
+
+      <p>
+        By <xref ref="thm-picard"/>, each of these solutions is unique.
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find all values of <m>m</m> for which a solution exists which satifies the additional constraint <m>y\left( \frac{\pi}{2} \right)=4</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Sketching graphs of the different solutions based on cases <m>m>0</m>, <m>m=0</m>, and <m>m &lt; 0</m> and think about <m>m</m> as a scaling factor.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Find all values of <m>m</m> for which a solution exists which satifies the additional constraint <m>y\left( \frac{3\pi}{2} \right)=4</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Sketching graphs of the different solutions based on cases <m>m>0</m>, <m>m=0</m>, and <m>m &lt; 0</m> and think about <m>m</m> as a scaling factor.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Find all values of <m>m</m> for which a solution exists which satifies the additional constraint <m>y\left( \frac{3\pi}{2} \right)=-4</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Sketching graphs of the different solutions based on cases <m>m>0</m>, <m>m=0</m>, and <m>m &lt; 0</m> and think about <m>m</m> as a scaling factor.
+      </p>
+    </hint>
+  </exercise>
+</exercisegroup>
+<exercisegroup>
+  <title>Lipschitz Functions</title>
+  <exercise xml:id="lipex">
+    <statement>
+      <p>
+        Prove that if <m>f</m> is differentiable for all <m>x \in \mathbb{R}</m> and <m>f'(x)</m> is uniformly bounded, then <m>f</m> satisfies a Lipschitz condition with respect to <m>x</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Since <m>f'(x)</m> is uniformly bounded, there exists some <m>K</m> such that <m>|f'(x)|\le K</m> for all <m>x\in\mathbb{R}</m>.  By Taylor's Theorem, <m>|f(x_2)-f(x_1)| = |f'(\xi)| |x_2-x_1| \le K|x_2-x_1|</m> which proves that <m>f</m> is Lipschitz with respect to <m>x</m>.
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Show that the converse of <xref ref="lipex" /> is false by finding a function <m>f:\mathbb{R} \to \mathbb{R}</m> which satisfies a Lipschitz condition with respect to <m>x</m> but is not differentiable for all <m>x\in\mathbb{R}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Consider <m>f(x)=|x|</m>. Then <m>|f(x_2)-f(x_1)|= ||x|-|y||\le |x-y|</m> by the Reverse Triangle Inequality. So <m>f</m> satisfies a Lipschitz condition with respect to <m>x</m> (the Lipschitz constant is <m>1</m>), but <m>f</m> is not differentiable at <m>x=0</m>.
+      </p>
+    </solution>
+  </exercise>
+  
+</exercisegroup>
+  <!-- For an example of WeBWorK, uncomment the next -->
+  <!-- exercise and run `pretext build html -w`.     -->
+  <!-- <exercise>
+    <webwork xml:id="ex_first-webwork-add-numbers">
+      <description>
+        Add two positive single-digit integers.
+      </description>
+
+      <pg-code>
+        $a = random(1, 9, 1);
+        $b = random(1, 9, 1);
+        $c = Compute($a + $b);
+      </pg-code>
+
+      <statement>
+        <p>
+          Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+        </p>
+        <p>
+          <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+        </p>
+      </solution>
+    </webwork>
+  </exercise> -->
+
+</exercises>

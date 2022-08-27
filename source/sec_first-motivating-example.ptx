@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="section-existence">
+    <title>Motivating Examples</title>
+
+      <p>In a first course in differential equations, the question of the existence of a solution is often moot, because one can demonstrate the existence simply by writing down the solution.</p>
+      <example xml:id="ex1">
+        <statement>
+          <p>
+            Show that the differential equation
+            <me>
+              \left\{ \begin{array}{l} y''=y \\ y(0)=0 \\ y'(0)=3 \end{array} \right.
+            </me>
+            has a solution.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since the differential equation <m>y''=y</m> is linear with constant coefficients, we could consider its characteristic equation, find the roots, and use those to write down a solution.  The initial conditions would then be used to find unknown constants.</p>
+
+            <p>For this problem, however, such a method is likely unnecessary.  We may observe that we know two linearly independent functions, namely <m>y_1(x)=\sin(x)</m> and <m>y_2(x)=\cos(x)</m>, which satisfy <m>y''=y</m>.  Hence, any solution must be of the form <m>y(t)=c_1y_1(t) + c_2y_2(t)</m>, and the initial conditions are again used to find the unknown constants <m>c_1</m> and <m>c_2</m>.</p>
+
+            <p>In this case, the reader should find that <m>y(t)=3\sin(t)</m> is a solution.  What is harder to show is that this is the <em>only</em>  solution.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        While the existence of a solution can be demonstrated by simply writing down a candidate and showing that it satisfies the initial value problem, it is harder to know whether the solution you have found is the <em>only</em> solution.  In a first course in differential equations, you may have enountered such problems.
+      </p>
+      <example xml:id="ex2">
+        <statement>
+          <p>
+            Show that the differential equation
+            <me>
+              \left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
+            </me>
+            has two solutions.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            This is a classic example of a separable differential equation.  To find the solution, rewrite the differential equation as
+            <men xml:id="nonuniqueexample">
+              \frac{y'}{y^\frac{2}{3}}=1,
+            </men>
+            which is only valid if <m>y\neq0</m>.  Note that <m>y_1(x)=0</m> is indeed a solution to the differential equation.
+          </p>
+          <p>
+            If <m>y\neq0</m>, then we may integrate both sides of <xref ref="nonuniqueexample" /> with respect to <m>x</m> from <m>0</m> to <m>t</m>.  Then on the left hand side we have
+            <me>
+              \int_0^t \frac{y'}{y^\frac{2}{3}}\; dx= \int_{y_2(0)}^{y_2(t)} \frac{1}{y^\frac{2}{3}} \; dy= \left. 3 (y(t))^\frac{1}{3}\right|_{y_2(0)}^{y_2(t)} = 3(y_2(t))^\frac{1}{3},
+            </me>
+            while on the right hand side, we have
+            <me>
+              \int_0^t 1\; dx = t.
+            </me>
+            Hence, our solution is <m>3(y_2(t))^\frac{1}{3}=t</m>, or equivalently <m>y_2(t)=\frac{1}{27}t^3</m>.
+          </p>
+        </solution>
+      </example>
+
+      <p>
+        There is also a third, more subtle issue, which deals with the interval on which the solution to a given differential equation is valid.  Even for relatively "well-behaved" differential equations, we can run into situations in which the interval of existence is quite small.
+      </p>
+      <example xml:id="ex3">
+        <statement>
+          <p>
+            Find the interval of existence for the solution to
+            <me>
+              \left\{ \begin{array}{l} y'=y^2 \\ y(0)=\alpha \end{array} \right.
+            </me>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The solution (which can be found by the same methods used in <xref ref="ex1"/> and <xref ref="ex2"/>) is <m> y(t) = \frac{1}{\frac{1}{\alpha} - t}</m>.  Note that this function is differentiable on <m>(-\infty,\frac{1}{\alpha}) \cup (\frac{1}{\alpha},\infty)</m>, and since the solution must satisfy the initial value, the solution is only valid on <m>(-\infty,\frac{1}{\alpha})</m>.  Note that when <m>\alpha</m> is sufficiently large, this means our solution only exist in a small range to the right of <m>x=0</m>.
+          </p>
+        </solution>
+      </example>
+      <p>From these three examples, we see that there are four important questions you might ask about an initial value problem:</p>
+      <ol>
+        <li>
+          <p>
+            Does the IVP have a solution on any interval?  This is the question of <alert>existence</alert>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If the IVP has a solution on a given interval, is there only one solution? This is the question of  <alert>uniqueness</alert>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If the IVP has a solution which is not unique on a given interval, how many solutions are there? This is the question of <alert>multiplicity</alert>.
+          </p>
+        </li>
+        <li>
+          <p>
+            How large can the interval on which the solution to the IVP exists possibly be?
+          </p>
+        </li>
+      </ol>
+
+      <p>
+        From our examples thus far, however, we have answered these questions only partially.  In <xref ref="ex1"/>, we proved existence of a solution, but did not establish uniqueness.  In <xref ref="ex2"/>, we proved nonuniqueness, but did not definitely answer the question of multiplicity (though we did provide a lower bound on the number of solutions). In <xref ref="ex3"/>, we showed that the solution could fail to exist arbitrarily close to the initial condition, but did not address how large the interval could be and what causes the solution to fail to exist outside some interval.
+      </p>
+      <p>
+        In any event, we are in a considerable amount of trouble if our only methods for dealing with these questions rely on writing down explicit solutions.  In fact, even simple differential equations of the form
+        <me>
+          y''+a(t)y'+b(t)y=0
+        </me>
+        may not have solutions expressible in terms of elementary (trigonometric, exponential, logarithmic, polynomial, etc.) functions.  The interested reader is directed to <xref ref="kovacic1987"/> for an in-depth discussion of when such equations do and do not have elementary solutions.
+      </p>
+      <p>
+        Moving forward, we wish to address the questions of existence, uniqueness, and multiplicity for initial value problems first, and then subsequently for a new type of problem, called a boundary value problem.
+      </p>
+
+  </section>
