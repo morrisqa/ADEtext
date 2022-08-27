@@ -53,14 +53,14 @@
         where <m>\alpha,\beta \in \mathbb{R}</m> and <m>f:D \to \mathbb{R}^n</m> is a continuous function defined on an open set <m> D=I \times \mathbb{R} \subset \mathbb{R}^2</m> containing <m>(\alpha,\beta)</m>.
     </p>
     <p>
-      It is reasonable to ask why we restrict ourselves to only first order ordinary differential equations.  There are two reasons: the first is that every
+      It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <m>n</m> can be rewritten as a system of <m>n</m> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.
     </p>
     <p>
       As <xref ref="ex2" /> showed, continuity of <m>\vec{f}</m> is not enough to guarantee the existence of a unique solution. It's worth recalling the problem here, which was,
       <me>
         \left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
       </me>
-      Clearly we need to seek out a more stringent criteria for <m>\vec{f}</m> if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish an existence and uniqueness theorem when <m>\vec{f}</m> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <m>y(0)=0</m> occurs where the function <m>f(y)=y^\frac{2}{3}</m> fails to be differentiable.
+      Clearly we need to seek out a more stringent criteria for <m>f</m> if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish an existence and uniqueness theorem when <m>\vec{f}</m> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <m>y(0)=0</m> occurs where the function <m>f(y)=y^\frac{2}{3}</m> fails to be differentiable.
     </p>
     <p>
       It is important to note here the way in which <m>f(y)</m> fails to be differentiable. In particular, <m>f(y)</m> is differentiable for all <m>y\neq 0</m> and <m>\displaystyle \lim_{y \to 0^+}f'(y)\lim_{y \to 0^+}f'(y)=\infty</m>.  What is unknown then is whether it is the simple failure of the derivative exist that is the issue, or whether it is the unboundedness of the derivative that is the issue.  It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <m>\vec{f}(t,\vec{x})</m> in both variables and boundedness of the partial derivative <m>\vec{f}_x(t,\vec{x})</m>.  But we can do better!
