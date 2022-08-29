@@ -12,19 +12,31 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A function <span class="process-math">\(\vec{f}:D\to\mathbb{R}^n\)</span> is said to satisfy a <em class="emphasis">Lipschitz condition with respect to <span class="process-math">\(x\)</span></em> on the open set <span class="process-math">\(D \subset \mathbb{R} \times \mathbb{R}^n\)</span> if, for any rectangle</p>
+<p>Define <span class="process-math">\(Q:[a,b] \to \mathbb{R}\)</span> by <span class="process-math">\(Q(t):=A + B \int_a^t f(s) \; ds\)</span> so that <span class="process-math">\(f(t)\le Q(t)\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  then</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\Omega:=\{(t,\vec{x}) \mid |t-t_0|\le a, \; \|\vec{x}-\vec{x}_0\| \le b \} \subset D,
+Q'(t)=Bf(t) \le B Q(t) \; \; \; \forall t \in [a,b],
 \end{equation*}
 </div>
-<p class="continuation">there exists a constant <span class="process-math">\(K\)</span> (depending on <span class="process-math">\(\Omega\)</span>) such that</p>
+<p class="continuation">or equivalently, <span class="process-math">\(Q'(t)-BQ(t) \le 0\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  Mulitplying both sides of the inequality by <span class="process-math">\(e^{-B(t-a)}\)</span> yields</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\|\vec{f}(t,\vec{x})-\vec{f}(t,\vec{y})\|\le K\|\vec{x}-\vec{y}\|
+Q'(t)e^{-B(t-a)} - B e^{-B(t-a)} Q(t) \le 0 \; \; \; \forall t \in [a,b],
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((t,\vec{x}),(t,\vec{y}) \in \Omega\text{.}\)</span></p>
+<p class="continuation">or equivalently</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(Q(t)e^{-B(t-a)})' \le 0 \; \; \; \forall t \in [a,b].
+\end{equation*}
+</div>
+<p class="continuation">Stated another way, we have now established that the function <span class="process-math">\(Q(t)e^{-B(t-a)}\)</span> is non-increasing on <span class="process-math">\([a,b]\text{,}\)</span> and hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Q(t)e^{-B(t-a)} \le Q(a)e^{-B(a-a)}= A \; \; \; \forall t \in [a,b].
+\end{equation*}
+</div>
+<p class="continuation">Hence, <span class="process-math">\(Q(t) \le A e^{B(t-a)}\text{,}\)</span> and since <span class="process-math">\(f(t) \le Q(t)\)</span> by assumption, we have the desired result, namely <span class="process-math">\(f(t) \le A e^{B(t-a)}\text{.}\)</span></p>
 <span class="incontext"><a href="sec-existencethms.html#p-31" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,10 +13,36 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.3.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1.2.4.1</span><span class="period">.</span>
 </h4>
-<p></p>
+<p>It is clear that <span class="process-math">\(z(t)=0\)</span> is a solution for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  Assume there is another solution, say <span class="process-math">\(w(t)\text{.}\)</span>  Using the Fundamental Theorem of Calculus, <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(w(t)\)</span> may be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z(t)=z(0)-\int_0^t |z(s)| \; ds = \int_0^t |z(s)| \; ds
+\end{equation*}
 </div>
-<span class="incontext"><a href="ex_first.html#solution-5" class="internal">in-context</a></span>
+<p class="continuation">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
+\end{equation*}
+</div>
+<p class="continuation">respectively, for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|w(t)-z(t)|= \left| \int_0^t |w(s)| \; ds - \int_0^t |z(s)| \; ds \right| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \; \; \; \forall t \in \mathbb{R}.
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{align*}
+|w(t)-z(t)| \amp = \left| \int_0^t |w(s)| - |z(s)|\\
+\amp \le
+\end{align*}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec-existencethms.html#solution-5" class="internal">in-context</a></span>
 </body>
 </html>

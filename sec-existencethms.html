@@ -52,7 +52,7 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_soundwriting.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
@@ -124,9 +124,10 @@ F(t,x(t),x'(t), \ldots, x^{(n)}(t))=0,
 \begin{equation*}
 x^{(n)}(t)=f(t,x(t),x'(t), \ldots, x^{(n-1)}(t)).
 \end{equation*}
-</div></article> <p id="p-24">Every differential equation of order <span class="process-math">\(n\)</span> which is written in normal form can be converted into an <span class="process-math">\(n\)</span>-dimensional system of first order differential equations, as we illustrate in the next example.</p> <article class="example example-like" id="ex1-1"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex1-1"><h4 class="heading">
+</div></article> <p id="p-24">Every differential equation of order <span class="process-math">\(n\)</span> which is written in normal form can be converted into an <span class="process-math">\(n\)</span>-dimensional system of first order differential equations, as we illustrate in the next example.</p> <article class="example example-like" id="ex1-1"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex1-1"><article class="example example-like"><p id="p-25">Rewrite the second-order differential equation</p>
+</h4>
+<p id="p-25">Rewrite the second-order differential equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x''(t)  + x'(t) \cdot x(t) = 0
@@ -142,7 +143,7 @@ x''(t)  + x'(t) \cdot x(t) = 0
 \end{equation*}
 </div>
 </div></div>
-</div></article></div> In this section (and the next few sections), we will concern ourselves with initial value problems of the form</p>
+</div></article> In this section (and the next few sections), we will concern ourselves with initial value problems of the form</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq-picard">
 \begin{equation}
 \left\{ \begin{array}{l} x^\prime = \vec{f}(t,x) \\ x(\alpha)=\beta \end{array} \right.\tag{1.2.1}
@@ -150,19 +151,98 @@ x''(t)  + x'(t) \cdot x(t) = 0
 </div>
 <p class="continuation">where <span class="process-math">\(\alpha,\beta \in \mathbb{R}\)</span> and <span class="process-math">\(f:D \to \mathbb{R}^n\)</span> is a continuous function defined on an open set <span class="process-math">\(D=I \times \mathbb{R} \subset \mathbb{R}^2\)</span> containing <span class="process-math">\((\alpha,\beta)\text{.}\)</span></p>
 <p id="p-27">It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <span class="process-math">\(n\)</span> can be rewritten as a system of <span class="process-math">\(n\)</span> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.</p>
-<p id="p-28">As <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a> showed, continuity of <span class="process-math">\(\vec{f}\)</span> is not enough to guarantee the existence of a unique solution. It's worth recalling the problem here, which was,</p>
+<p id="p-28">As <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a> showed, continuity of <span class="process-math">\(\vec{f}\)</span> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex2.html">
 \begin{equation*}
 \left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
 \end{equation*}
 </div>
-<p class="continuation">Clearly we need to seek out a more stringent criteria for <span class="process-math">\(f\)</span> if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish an existence and uniqueness theorem when <span class="process-math">\(\vec{f}\)</span> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <span class="process-math">\(y(0)=0\)</span> occurs where the function <span class="process-math">\(f(y)=y^\frac{2}{3}\)</span> fails to be differentiable.</p>
-<p id="p-29">It is important to note here the way in which <span class="process-math">\(f(y)\)</span> fails to be differentiable. In particular, <span class="process-math">\(f(y)\)</span> is differentiable for all <span class="process-math">\(y\neq 0\)</span> and <span class="process-math">\(\displaystyle \lim_{y \to 0^+}f'(y)\lim_{y \to 0^+}f'(y)=\infty\text{.}\)</span>  What is unknown then is whether it is the simple failure of the derivative exist that is the issue, or whether it is the unboundedness of the derivative that is the issue.  It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
-<p id="p-30">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p>
-<article class="definition definition-like" id="def-lipschitz"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+<p class="continuation">Clearly we need to seek out a more stringent criteria for <span class="process-math">\(f\)</span> than just continuity if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish a uniqueness theorem when <span class="process-math">\(f\)</span> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <span class="process-math">\(y(0)=0\)</span> occurs where the function <span class="process-math">\(f(y)=y^\frac{2}{3}\)</span> fails to be differentiable.</p>
+<p id="p-29">But it is important to note here the way in which <span class="process-math">\(f(y)\)</span> fails to be differentiable. In particular, <span class="process-math">\(f(y)\)</span> is differentiable for all <span class="process-math">\(y\neq 0\)</span> and <span class="process-math">\(\displaystyle \lim_{y \to 0^+}f'(y)\lim_{y \to 0^+}f'(y)=\infty\text{.}\)</span>  What is unknown to us now, then, is whether it is the simple failure of the derivative exist that is the issue, or whether it is the unboundedness of the derivative that is the issue. We will turn our attention shortly to an example in order to help clarify matters for us.  But first, we begin with an important and useful inequality.</p>
+<article class="theorem theorem-like" id="thm-gronwall"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Gronwall's Inequality.</span>
 </h4>
-<p id="p-31">A function <span class="process-math">\(\vec{f}:D\to\mathbb{R}^n\)</span> is said to satisfy a <em class="emphasis">Lipschitz condition with respect to <span class="process-math">\(x\)</span></em> on the open set <span class="process-math">\(D \subset \mathbb{R} \times \mathbb{R}^n\)</span> if, for any rectangle</p>
+<p id="p-30">Let <span class="process-math">\(f:[a,b] \to \mathbb{R} \)</span> be a non-negative function, and let there exist constants <span class="process-math">\(A,B \ge 0\)</span> such that <span class="process-math">\(f\)</span> satisfies</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(t) \le A + B \int_a^t f(s) \; ds
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  Then <span class="process-math">\(f(t) \le A e^{B(t-a)}\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span></p></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-31">Define <span class="process-math">\(Q:[a,b] \to \mathbb{R}\)</span> by <span class="process-math">\(Q(t):=A + B \int_a^t f(s) \; ds\)</span> so that <span class="process-math">\(f(t)\le Q(t)\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Q'(t)=Bf(t) \le B Q(t) \; \; \; \forall t \in [a,b],
+\end{equation*}
+</div>
+<p class="continuation">or equivalently, <span class="process-math">\(Q'(t)-BQ(t) \le 0\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  Mulitplying both sides of the inequality by <span class="process-math">\(e^{-B(t-a)}\)</span> yields</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Q'(t)e^{-B(t-a)} - B e^{-B(t-a)} Q(t) \le 0 \; \; \; \forall t \in [a,b],
+\end{equation*}
+</div>
+<p class="continuation">or equivalently</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+(Q(t)e^{-B(t-a)})' \le 0 \; \; \; \forall t \in [a,b].
+\end{equation*}
+</div>
+<p class="continuation">Stated another way, we have now established that the function <span class="process-math">\(Q(t)e^{-B(t-a)}\)</span> is non-increasing on <span class="process-math">\([a,b]\text{,}\)</span> and hence</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+Q(t)e^{-B(t-a)} \le Q(a)e^{-B(a-a)}= A \; \; \; \forall t \in [a,b].
+\end{equation*}
+</div>
+<p class="continuation">Hence, <span class="process-math">\(Q(t) \le A e^{B(t-a)}\text{,}\)</span> and since <span class="process-math">\(f(t) \le Q(t)\)</span> by assumption, we have the desired result, namely <span class="process-math">\(f(t) \le A e^{B(t-a)}\text{.}\)</span></p></article></div>
+<p id="p-32">At first glance, the theorem may seem of little use.  It only applies to non-negative functions which satisfy a very specific type of inequality.  However, as the next example will show us, this inequality is quite useful!</p>
+<article class="example example-like" id="exabsf"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h4>
+<p id="p-33">Show that the initial value problem</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left\{ \begin{array}{c}
+y'(t)=|y(t)|, \\
+y(0)=0,
+\end{array} \right.
+\end{equation*}
+</div>
+<p class="continuation">has exactly one solution.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
+<p id="p-34">It is clear that <span class="process-math">\(z(t)=0\)</span> is a solution for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  Assume there is another solution, say <span class="process-math">\(w(t)\text{.}\)</span>  Using the Fundamental Theorem of Calculus, <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(w(t)\)</span> may be written as</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+z(t)=z(0)-\int_0^t |z(s)| \; ds = \int_0^t |z(s)| \; ds
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
+\end{equation*}
+</div>
+<p class="continuation">respectively, for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|w(t)-z(t)|= \left| \int_0^t |w(s)| \; ds - \int_0^t |z(s)| \; ds \right| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \; \; \; \forall t \in \mathbb{R}.
+\end{equation*}
+</div>
+<p class="continuation">then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{align*}
+|w(t)-z(t)| \amp = \left| \int_0^t |w(s)| - |z(s)|\\
+\amp \le
+\end{align*}
+\end{equation*}
+</div>
+</div></div>
+</div></article><p id="p-35">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
+<p id="p-36">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p>
+<article class="definition definition-like" id="def-lipschitz"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h4>
+<p id="p-37">A function <span class="process-math">\(\vec{f}:D\to\mathbb{R}^n\)</span> is said to satisfy a <em class="emphasis">Lipschitz condition with respect to <span class="process-math">\(x\)</span></em> on the open set <span class="process-math">\(D \subset \mathbb{R} \times \mathbb{R}^n\)</span> if, for any rectangle</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \Omega:=\{(t,\vec{x}) \mid |t-t_0|\le a, \; \|\vec{x}-\vec{x}_0\| \le b \} \subset D,
@@ -175,9 +255,9 @@ x''(t)  + x'(t) \cdot x(t) = 0
 \end{equation*}
 </div>
 <p class="continuation">for all <span class="process-math">\((t,\vec{x}),(t,\vec{y}) \in \Omega\text{.}\)</span></p></article></section><article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
 </h3>
-<p id="p-32">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-33">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
+<p id="p-38">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-39">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
 </div>
 </body>
 </html>

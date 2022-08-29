@@ -52,7 +52,7 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_soundwriting.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
@@ -108,9 +108,10 @@ window.MathJax = {
 <span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Motivating Examples</span>
 </h2>
 <p id="p-2">In a first course in differential equations, the question of the existence of a solution is often moot, because one can demonstrate the existence simply by writing down the solution.</p>
-<article class="example example-like" id="ex1"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex1"><h3 class="heading">
+<article class="example example-like" id="ex1"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex1"><article class="example example-like"><p id="p-3">Show that the differential equation</p>
+</h3>
+<p id="p-3">Show that the differential equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left\{ \begin{array}{l} y''=y \\ y(0)=0 \\ y'(0)=3 \end{array} \right.
@@ -123,11 +124,11 @@ window.MathJax = {
 <p id="p-5">For this problem, however, such a method is likely unnecessary.  We may observe that we know two linearly independent functions, namely <span class="process-math">\(y_1(x)=\sin(x)\)</span> and <span class="process-math">\(y_2(x)=\cos(x)\text{,}\)</span> which satisfy <span class="process-math">\(y''=y\text{.}\)</span>  Hence, any solution must be of the form <span class="process-math">\(y(t)=c_1y_1(t) + c_2y_2(t)\text{,}\)</span> and the initial conditions are again used to find the unknown constants <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\text{.}\)</span></p>
 <p id="p-6">In this case, the reader should find that <span class="process-math">\(y(t)=3\sin(t)\)</span> is a solution.  What is harder to show is that this is the <em class="emphasis">only</em>  solution.</p>
 </div></div>
-</div></article></div>
-<p id="p-7">While the existence of a solution can be demonstrated by simply writing down a candidate and showing that it satisfies the initial value problem, it is harder to know whether the solution you have found is the <em class="emphasis">only</em> solution.  In a first course in differential equations, you may have enountered such problems.</p>
-<article class="example example-like" id="ex2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex2"><h3 class="heading">
+</div></article><p id="p-7">While the existence of a solution can be demonstrated by simply writing down a candidate and showing that it satisfies the initial value problem, it is harder to know whether the solution you have found is the <em class="emphasis">only</em> solution.  In a first course in differential equations, you may have enountered such problems.</p>
+<article class="example example-like" id="ex2"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex2"><article class="example example-like"><p id="p-8">Show that the differential equation</p>
+</h3>
+<p id="p-8">Show that the differential equation</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
@@ -157,11 +158,11 @@ window.MathJax = {
 </div>
 <p class="continuation">Hence, our solution is <span class="process-math">\(3(y_2(t))^\frac{1}{3}=t\text{,}\)</span> or equivalently <span class="process-math">\(y_2(t)=\frac{1}{27}t^3\text{.}\)</span></p>
 </div></div>
-</div></article></div>
-<p id="p-11">There is also a third, more subtle issue, which deals with the interval on which the solution to a given differential equation is valid.  Even for relatively "well-behaved" differential equations, we can run into situations in which the interval of existence is quite small.</p>
-<article class="example example-like" id="ex3"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex3"><h3 class="heading">
+</div></article><p id="p-11">There is also a third, more subtle issue, which deals with the interval on which the solution to a given differential equation is valid.  Even for relatively "well-behaved" differential equations, we can run into situations in which the interval of existence is quite small.</p>
+<article class="example example-like" id="ex3"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
-</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex3"><article class="example example-like"><p id="p-12">Find the interval of existence for the solution to</p>
+</h3>
+<p id="p-12">Find the interval of existence for the solution to</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \left\{ \begin{array}{l} y'=y^2 \\ y(0)=\alpha \end{array} \right.
@@ -169,8 +170,7 @@ window.MathJax = {
 </div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><p id="p-13">The solution (which can be found by the same methods used in <a href="" class="xref" data-knowl="./knowl/ex1.html" title="Example 1.1.1">Example 1.1.1</a> and <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a>) is <span class="process-math">\(y(t) = \frac{1}{\frac{1}{\alpha} - t}\text{.}\)</span>  Note that this function is differentiable on <span class="process-math">\((-\infty,\frac{1}{\alpha}) \cup (\frac{1}{\alpha},\infty)\text{,}\)</span> and since the solution must satisfy the initial value, the solution is only valid on <span class="process-math">\((-\infty,\frac{1}{\alpha})\text{.}\)</span>  Note that when <span class="process-math">\(\alpha\)</span> is sufficiently large, this means our solution only exist in a small range to the right of <span class="process-math">\(x=0\text{.}\)</span></p></div></div>
-</div></article></div>
-<p id="p-14">From these three examples, we see that there are four important questions you might ask about an initial value problem:</p>
+</div></article><p id="p-14">From these three examples, we see that there are four important questions you might ask about an initial value problem:</p>
 <ol class="decimal">
 <li id="li-1"><p id="p-15">Does the IVP have a solution on any interval?  This is the question of <em class="alert">existence</em>.</p></li>
 <li id="li-2"><p id="p-16">If the IVP has a solution on a given interval, is there only one solution? This is the question of  <em class="alert">uniqueness</em>.</p></li>
