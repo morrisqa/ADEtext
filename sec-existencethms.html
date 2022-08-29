@@ -273,17 +273,54 @@ w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
 \end{equation*}
 </div>
 <p class="continuation">for all <span class="process-math">\((t,x),(t,y) \in \Omega\text{.}\)</span></p></article><p id="p-38">Having defined such things, it would be helpful now to convince ourselves that such functions actually exist!  What a terrible situation we would be in if the very type of functions we needed did not, in fact, exist!</p>
-<article class="example example-like" id="example-6"><h4 class="heading">
+<article class="example example-like" id="abs_is_lip"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
 </h4>
-<p id="p-39">Show that the function <span class="process-math">\(f(t,y)=|y|\)</span> is Lipschitz</p>
+<p id="p-39">Show that the function <span class="process-math">\(f(t,y)=|y|\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(y\)</span> with <span class="process-math">\(K=1\text{.}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><p id="p-40"></p></div></div>
-</div></article><p id="p-41">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
-<p id="p-42">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p></section><article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
+<p id="p-40">By the reverse triangle inequality, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\left|f(t,x)-f(t,y)\right| = \left| |x|-|y| \right| \le |x-y|.
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\((t,y)\in \mathbb{R}^2.\)</span>  Hence, <span class="process-math">\(f(t,y)\)</span> satisfies a Lipschitz condition with <span class="process-math">\(K=1.\)</span></p>
+</div></div>
+</div></article><article class="example example-like" id="example-7"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+</h4>
+<p id="p-41">Show that the function <span class="process-math">\(f(t,y)=t^2 y^3\)</span> satisfies a Lipschitz condition.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
+<p id="p-42">This example is a bit trickier than <a href="" class="xref" data-knowl="./knowl/abs_is_lip.html" title="Example 1.2.6">Example 1.2.6</a> because our constant <span class="process-math">\(K\)</span> will depend on <span class="process-math">\(\Omega\)</span> in this case.  Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
+\begin{equation*}
+\Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R}.
+\end{equation*}
+</div>
+<p class="continuation">Then, for all <span class="process-math">\((t,y) \in \Omega\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
+\begin{equation*}
+\left|f(t,x)-f(t,y)\right| = \left| t^2x^3-t^2y^3 \right| =|t^2| |x^3-y^3|=|t^2||3\xi ^2| |x-y|.
+\end{equation*}
+</div>
+<p class="continuation">for some <span class="process-math">\(\xi \in (x_0-b,x_0+b)\)</span> by the Mean Value Theorem.  Let <span class="process-math">\(A=max\{|t_0-a|,|t_0+a|\}\)</span> and let <span class="process-math">\(B=max\{|x_0-b|,|x_0+b|\}\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
+\begin{equation*}
+\left|f(t,x)-f(t,y)\right| = |t^2||3\xi ^2| |x-y| \le A^2\cdot 3B^2 |x-y|,
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\((t,y)\in\Omega\text{.}\)</span>  Hence, <span class="process-math">\(f(t,y)\)</span> satisfies a Lipschitz condition.</p>
+</div></div>
+</div></article><article class="fact theorem-like" id="fact-"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h4>
+<p id="p-43">If <span class="process-math">\(f(t,y)\)</span> has a continuous derivative with respect to <span class="process-math">\(y\text{,}\)</span> then <span class="process-math">\(f\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(y\text{.}\)</span>  A version of this statement will be proven in the exercises.</p></article><p id="p-44">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
+<p id="p-45">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p></section><article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
 </h3>
-<p id="p-43">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-44">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
+<p id="p-46">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-47">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
 </div>
 </body>
 </html>
