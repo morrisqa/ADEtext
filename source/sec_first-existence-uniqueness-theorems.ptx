@@ -48,13 +48,18 @@
       In this section (and the next few sections), we will concern ourselves with initial value problems of the form
 
         <men xml:id="eq-picard">
-          \left\{ \begin{array}{l} x^\prime = \vec{f}(t,x) \\ x(\alpha)=\beta \end{array} \right.
+          \left\{ \begin{array}{l} x^\prime = f(t,x) \\ x(\alpha)=\beta \end{array} \right.
         </men>
-        where <m>\alpha,\beta \in \mathbb{R}</m> and <m>f:D \to \mathbb{R}^n</m> is a continuous function defined on an open set <m> D=I \times \mathbb{R} \subset \mathbb{R}^2</m> containing <m>(\alpha,\beta)</m>.
+        where <m>\alpha,\beta \in \mathbb{R}</m> and <m>f:D \to \mathbb{R}^n</m> is a continuous function defined on an open set <m> D=I \times \mathbb{R} \subset \mathbb{R}^2</m> with <m>\alpha \in I</m>.
     </p>
     <p>
       It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <m>n</m> can be rewritten as a system of <m>n</m> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.
     </p>
+
+    </subsection>
+
+    <subsection xml:id="subsec-">
+      <title>Uniqueness of Solutions</title>
     <p>
       As <xref ref="ex2" /> showed, continuity of <m>\vec{f}</m> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,
       <me>
@@ -143,26 +148,56 @@
       </solution>
     </example>
     <p>
+      This is great news!  We have shown in <xref ref="exabsf" /> that (1) a solution exists (by finding a solution directly) and (2) that the solution we found is the only solution!  Additionally, the work provides a roadmap for proceeding toward a more general proof of a uniqueness theorem.  Before moving on, consider how the work in <xref ref="exabsf" /> would change if the right-hand side of the differential equation were changed from <m>|y(t)|</m> to a more general <m>f(t,y)</m>. While we would not know whether a solution existed for the more general equation, we could still endeavor to show that if we have two solutions, say <m>z(t)</m> and <m>w(t)</m>, then we must have <m>z(t)=w(t)</m>. Virtually all of our work would proceed the same, until we reached our use of the reverse triangle inequality.  In <xref ref="exabsf" />, we used
+      <me>
+        \left| | w(t)| - |z(t)| \right| \le \left| w(t)-z(t) \right|,
+      </me>
+      the reverse triangle inequality.  Now, however, we needed
+      <me>
+        \left| f(t,w(t))-f(t,z(t)) \right| \le K \left|w(t)-z(t)\right|.
+      </me>
+      Note that the inclusion of an additional constant <m>K>0</m> will not affect our work, since it will simply be included in the exponent when Gronwall's Inequality is applied.
+    </p>
+    <p>
+      So, what functions, if any, satisfy this inequality and how we think of them?  Before we answer this question, let's give functions satisfying this condition a name.
+    </p>
+    <definition xml:id="def-lipschitz">
+     <statement>
+       <p>
+         A function <m>f:I \times \mathbb{R} \to\mathbb{R}^n</m> is said to satisfy a <term>Lipschitz condition with respect to <m>x</m> </term> on the open set <m>I \times R \subset \mathbb{R}^2</m> if, for any rectangle
+         <me>
+           \Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R},
+         </me>
+         there exists a constant <m>K</m> (depending on <m>\Omega</m>) such that
+         <me>
+           \left|f(t,x)-f(t,y)\right|\le K|x-y|
+         </me>
+         for all <m>(t,x),(t,y) \in \Omega</m>.
+       </p>
+     </statement>
+   </definition>
+   <p>
+     Having defined such things, it would be helpful now to convince ourselves that such functions actually exist!  What a terrible situation we would be in if the very type of functions we needed did not, in fact, exist!
+   </p>
+   <example>
+     <statement>
+       <p>
+         Show that the function <m>f(t,y)=|y|</m> is Lipschitz
+       </p>
+     </statement>
+     <solution>
+       <p>
+
+       </p>
+     </solution>
+   </example>
+    <p>
     It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <m>\vec{f}(t,\vec{x})</m> in both variables and boundedness of the partial derivative <m>\vec{f}_x(t,\vec{x})</m>.  But we can do better!
     </p>
     <p>
       As it turns out, the key necessary for existence and uniqueness is for <m>f(t,y)</m> to not change too rapidly as <m>y</m> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.
     </p>
-     <definition xml:id="def-lipschitz">
-      <statement>
-        <p>
-          A function <m>\vec{f}:D\to\mathbb{R}^n</m> is said to satisfy a <em>Lipschitz condition with respect to <m>x</m> </em> on the open set <m>D \subset \mathbb{R} \times \mathbb{R}^n</m> if, for any rectangle
-          <me>
-            \Omega:=\{(t,\vec{x}) \mid |t-t_0|\le a, \; \|\vec{x}-\vec{x}_0\| \le b \} \subset D,
-          </me>
-          there exists a constant <m>K</m> (depending on <m>\Omega</m>) such that
-          <me>
-            \|\vec{f}(t,\vec{x})-\vec{f}(t,\vec{y})\|\le K\|\vec{x}-\vec{y}\|
-          </me>
-          for all <m>(t,\vec{x}),(t,\vec{y}) \in \Omega</m>.
-        </p>
-      </statement>
-    </definition>
+
 
   </subsection>
 
