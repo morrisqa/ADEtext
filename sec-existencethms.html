@@ -227,15 +227,19 @@ w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
 |w(t)-z(t)|= \left| \int_0^t |w(s)| \; ds - \int_0^t |z(s)| \; ds \right| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \; \; \; \forall t \in \mathbb{R}.
 \end{equation*}
 </div>
-<p class="continuation">then</p>
+<p class="continuation">and, utilizing the fact that <span class="process-math">\(\left|\int_a^b g(s)\; ds \right| \le \int_a^b |g(s)| \; ds\text{,}\)</span> we have</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\begin{align*}
-|w(t)-z(t)| \amp = \left| \int_0^t |w(s)| - |z(s)|\\
-\amp \le
-\end{align*}
+|w(t)-z(t)| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \le  \int_0^t \left| |w(s)| - |z(s)| \right| \; ds.
 \end{equation*}
 </div>
+<p class="continuation">Finally, we apply the reverse triangle inequality to observe that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+|w(t)-z(t)| \le  \int_0^t \left| |w(s)| - |z(s)| \right| \; ds \le \int_0^t \left| w(s) - z(s) \right| \; ds.
+\end{equation*}
+</div>
+<p class="continuation">Now, since this inequality holds for all <span class="process-math">\(t\in\mathbb{R}\text{,}\)</span> we may apply Gronwall's Inequality with <span class="process-math">\(f(t)=|w(t)-z(t)|\text{,}\)</span> <span class="process-math">\(A=0\text{,}\)</span> and <span class="process-math">\(B=1\text{.}\)</span>  Hence, <span class="process-math">\(|w(t)-z(t)|\le 0\cdot e^{1(t-0)}=0\text{,}\)</span> and since <span class="process-math">\(|w(t)-z(t)|\ge 0\)</span> by definition of the absolute value function, we must have <span class="process-math">\(|w(t)-z(t)|=0\)</span> for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  This implies that <span class="process-math">\(w(t)=z(t)\)</span> for all <span class="process-math">\(t \in \mathbb{R}\text{,}\)</span> and hence we only have one solution.</p>
 </div></div>
 </div></article><p id="p-35">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
 <p id="p-36">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p>
