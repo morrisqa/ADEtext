@@ -12,19 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A function <span class="process-math">\(\vec{f}:D\to\mathbb{R}^n\)</span> is said to satisfy a <em class="emphasis">Lipschitz condition with respect to <span class="process-math">\(x\)</span></em> on the open set <span class="process-math">\(D \subset \mathbb{R} \times \mathbb{R}^n\)</span> if, for any rectangle</p>
+<p>A function <span class="process-math">\(f:I \times \mathbb{R} \to\mathbb{R}^n\)</span> is said to satisfy a <dfn class="terminology">Lipschitz condition with respect to <span class="process-math">\(x\)</span></dfn> on the open set <span class="process-math">\(I \times R \subset \mathbb{R}^2\)</span> if, for any rectangle</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\Omega:=\{(t,\vec{x}) \mid |t-t_0|\le a, \; \|\vec{x}-\vec{x}_0\| \le b \} \subset D,
+\Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R},
 \end{equation*}
 </div>
 <p class="continuation">there exists a constant <span class="process-math">\(K\)</span> (depending on <span class="process-math">\(\Omega\)</span>) such that</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\|\vec{f}(t,\vec{x})-\vec{f}(t,\vec{y})\|\le K\|\vec{x}-\vec{y}\|
+\left|f(t,x)-f(t,y)\right|\le K|x-y|
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((t,\vec{x}),(t,\vec{y}) \in \Omega\text{.}\)</span></p>
+<p class="continuation">for all <span class="process-math">\((t,x),(t,y) \in \Omega\text{.}\)</span></p>
 <span class="incontext"><a href="sec-existencethms.html#p-37" class="internal">in-context</a></span>
 </body>
 </html>

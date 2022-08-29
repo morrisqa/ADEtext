@@ -146,11 +146,13 @@ x''(t)  + x'(t) \cdot x(t) = 0
 </div></article> In this section (and the next few sections), we will concern ourselves with initial value problems of the form</p>
 <div class="displaymath process-math" data-contains-math-knowls="" id="eq-picard">
 \begin{equation}
-\left\{ \begin{array}{l} x^\prime = \vec{f}(t,x) \\ x(\alpha)=\beta \end{array} \right.\tag{1.2.1}
+\left\{ \begin{array}{l} x^\prime = f(t,x) \\ x(\alpha)=\beta \end{array} \right.\tag{1.2.1}
 \end{equation}
 </div>
-<p class="continuation">where <span class="process-math">\(\alpha,\beta \in \mathbb{R}\)</span> and <span class="process-math">\(f:D \to \mathbb{R}^n\)</span> is a continuous function defined on an open set <span class="process-math">\(D=I \times \mathbb{R} \subset \mathbb{R}^2\)</span> containing <span class="process-math">\((\alpha,\beta)\text{.}\)</span></p>
-<p id="p-27">It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <span class="process-math">\(n\)</span> can be rewritten as a system of <span class="process-math">\(n\)</span> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.</p>
+<p class="continuation">where <span class="process-math">\(\alpha,\beta \in \mathbb{R}\)</span> and <span class="process-math">\(f:D \to \mathbb{R}^n\)</span> is a continuous function defined on an open set <span class="process-math">\(D=I \times \mathbb{R} \subset \mathbb{R}^2\)</span> with <span class="process-math">\(\alpha \in I\text{.}\)</span></p>
+<p id="p-27">It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <span class="process-math">\(n\)</span> can be rewritten as a system of <span class="process-math">\(n\)</span> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.</p></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Uniqueness of Solutions</span>
+</h3>
 <p id="p-28">As <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a> showed, continuity of <span class="process-math">\(\vec{f}\)</span> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,</p>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/ex2.html">
 \begin{equation*}
@@ -241,27 +243,47 @@ w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
 </div>
 <p class="continuation">Now, since this inequality holds for all <span class="process-math">\(t\in\mathbb{R}\text{,}\)</span> we may apply Gronwall's Inequality with <span class="process-math">\(f(t)=|w(t)-z(t)|\text{,}\)</span> <span class="process-math">\(A=0\text{,}\)</span> and <span class="process-math">\(B=1\text{.}\)</span>  Hence, <span class="process-math">\(|w(t)-z(t)|\le 0\cdot e^{1(t-0)}=0\text{,}\)</span> and since <span class="process-math">\(|w(t)-z(t)|\ge 0\)</span> by definition of the absolute value function, we must have <span class="process-math">\(|w(t)-z(t)|=0\)</span> for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  This implies that <span class="process-math">\(w(t)=z(t)\)</span> for all <span class="process-math">\(t \in \mathbb{R}\text{,}\)</span> and hence we only have one solution.</p>
 </div></div>
-</div></article><p id="p-35">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
-<p id="p-36">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p>
+</div></article><p id="p-35">This is great news!  We have shown in <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.4">Example 1.2.4</a> that (1) a solution exists (by finding a solution directly) and (2) that the solution we found is the only solution!  Additionally, the work provides a roadmap for proceeding toward a more general proof of a uniqueness theorem.  Before moving on, consider how the work in <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.4">Example 1.2.4</a> would change if the right-hand side of the differential equation were changed from <span class="process-math">\(|y(t)|\)</span> to a more general <span class="process-math">\(f(t,y)\text{.}\)</span> While we would not know whether a solution existed for the more general equation, we could still endeavor to show that if we have two solutions, say <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(w(t)\text{,}\)</span> then we must have <span class="process-math">\(z(t)=w(t)\text{.}\)</span> Virtually all of our work would proceed the same, until we reached our use of the reverse triangle inequality.  In <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.4">Example 1.2.4</a>, we used</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exabsf.html ./knowl/exabsf.html ./knowl/exabsf.html">
+\begin{equation*}
+\left| | w(t)| - |z(t)| \right| \le \left| w(t)-z(t) \right|,
+\end{equation*}
+</div>
+<p class="continuation">the reverse triangle inequality.  Now, however, we needed</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exabsf.html ./knowl/exabsf.html ./knowl/exabsf.html">
+\begin{equation*}
+\left| f(t,w(t))-f(t,z(t)) \right| \le K \left|w(t)-z(t)\right|.
+\end{equation*}
+</div>
+<p class="continuation">Note that the inclusion of an additional constant <span class="process-math">\(K&gt;0\)</span> will not affect our work, since it will simply be included in the exponent when Gronwall's Inequality is applied.</p>
+<p id="p-36">So, what functions, if any, satisfy this inequality and how we think of them?  Before we answer this question, let's give functions satisfying this condition a name.</p>
 <article class="definition definition-like" id="def-lipschitz"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
 </h4>
-<p id="p-37">A function <span class="process-math">\(\vec{f}:D\to\mathbb{R}^n\)</span> is said to satisfy a <em class="emphasis">Lipschitz condition with respect to <span class="process-math">\(x\)</span></em> on the open set <span class="process-math">\(D \subset \mathbb{R} \times \mathbb{R}^n\)</span> if, for any rectangle</p>
+<p id="p-37">A function <span class="process-math">\(f:I \times \mathbb{R} \to\mathbb{R}^n\)</span> is said to satisfy a <dfn class="terminology">Lipschitz condition with respect to <span class="process-math">\(x\)</span></dfn> on the open set <span class="process-math">\(I \times R \subset \mathbb{R}^2\)</span> if, for any rectangle</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\Omega:=\{(t,\vec{x}) \mid |t-t_0|\le a, \; \|\vec{x}-\vec{x}_0\| \le b \} \subset D,
+\Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R},
 \end{equation*}
 </div>
 <p class="continuation">there exists a constant <span class="process-math">\(K\)</span> (depending on <span class="process-math">\(\Omega\)</span>) such that</p>
 <div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
-\|\vec{f}(t,\vec{x})-\vec{f}(t,\vec{y})\|\le K\|\vec{x}-\vec{y}\|
+\left|f(t,x)-f(t,y)\right|\le K|x-y|
 \end{equation*}
 </div>
-<p class="continuation">for all <span class="process-math">\((t,\vec{x}),(t,\vec{y}) \in \Omega\text{.}\)</span></p></article></section><article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
+<p class="continuation">for all <span class="process-math">\((t,x),(t,y) \in \Omega\text{.}\)</span></p></article><p id="p-38">Having defined such things, it would be helpful now to convince ourselves that such functions actually exist!  What a terrible situation we would be in if the very type of functions we needed did not, in fact, exist!</p>
+<article class="example example-like" id="example-6"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
+</h4>
+<p id="p-39">Show that the function <span class="process-math">\(f(t,y)=|y|\)</span> is Lipschitz</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><p id="p-40"></p></div></div>
+</div></article><p id="p-41">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
+<p id="p-42">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p></section><article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
 </h3>
-<p id="p-38">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-39">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
+<p id="p-43">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-44">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
 </div>
 </body>
 </html>
