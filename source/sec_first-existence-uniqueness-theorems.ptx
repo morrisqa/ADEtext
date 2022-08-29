@@ -179,18 +179,53 @@
    <p>
      Having defined such things, it would be helpful now to convince ourselves that such functions actually exist!  What a terrible situation we would be in if the very type of functions we needed did not, in fact, exist!
    </p>
-   <example>
+   <example xml:id="abs_is_lip">
      <statement>
        <p>
-         Show that the function <m>f(t,y)=|y|</m> is Lipschitz
+         Show that the function <m>f(t,y)=|y|</m> satisfies a Lipschitz condition with respect to <m>y</m> with <m>K=1</m>.
        </p>
      </statement>
      <solution>
        <p>
-
+         By the reverse triangle inequality, we have
+         <me>
+           \left|f(t,x)-f(t,y)\right| = \left| |x|-|y| \right| \le |x-y|.
+         </me>
+         for all <m>(t,y)\in \mathbb{R}^2.</m>  Hence, <m>f(t,y)</m> satisfies a Lipschitz condition with <m>K=1.</m>
        </p>
      </solution>
    </example>
+   <example>
+     <statement>
+       <p>
+         Show that the function <m>f(t,y)=t^2 y^3</m> satisfies a Lipschitz condition.
+       </p>
+     </statement>
+     <solution>
+       <p>
+         This example is a bit trickier than <xref ref="abs_is_lip" /> because our constant <m>K</m> will depend on <m>\Omega</m> in this case.  Let
+         <me>
+           \Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R}.
+         </me>
+         Then, for all <m>(t,y) \in \Omega</m>
+         <me>
+           \left|f(t,x)-f(t,y)\right| = \left| t^2x^3-t^2y^3 \right| =|t^2| |x^3-y^3|=|t^2||3\xi ^2| |x-y|.
+         </me>
+         for some <m>\xi \in (x_0-b,x_0+b)</m> by the Mean Value Theorem.  Let <m>A=max\{|t_0-a|,|t_0+a|\}</m> and let <m>B=max\{|x_0-b|,|x_0+b|\}</m>.  Then,
+         <me>
+           \left|f(t,x)-f(t,y)\right| = |t^2||3\xi ^2| |x-y| \le A^2\cdot 3B^2 |x-y|,
+         </me>
+         for all <m>(t,y)\in\Omega</m>.  Hence, <m>f(t,y)</m> satisfies a Lipschitz condition.
+       </p>
+     </solution>
+   </example>
+   <fact xml:id="fact-">
+     <statement>
+       <p>
+         If <m>f(t,y)</m> has a continuous derivative with respect to <m>y</m>, then <m>f</m> satisfies a Lipschitz condition with respect to <m>y</m>.  A version of this statement will be proven in the exercises.
+       </p>
+     </statement>
+   </fact>
     <p>
     It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <m>\vec{f}(t,\vec{x})</m> in both variables and boundedness of the partial derivative <m>\vec{f}_x(t,\vec{x})</m>.  But we can do better!
     </p>
