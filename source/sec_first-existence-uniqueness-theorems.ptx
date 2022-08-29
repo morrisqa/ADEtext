@@ -56,14 +56,93 @@
       It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <m>n</m> can be rewritten as a system of <m>n</m> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.
     </p>
     <p>
-      As <xref ref="ex2" /> showed, continuity of <m>\vec{f}</m> is not enough to guarantee the existence of a unique solution. It's worth recalling the problem here, which was,
+      As <xref ref="ex2" /> showed, continuity of <m>\vec{f}</m> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,
       <me>
         \left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
       </me>
-      Clearly we need to seek out a more stringent criteria for <m>f</m> if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish an existence and uniqueness theorem when <m>\vec{f}</m> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <m>y(0)=0</m> occurs where the function <m>f(y)=y^\frac{2}{3}</m> fails to be differentiable.
+      Clearly we need to seek out a more stringent criteria for <m>f</m> than just continuity if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish a uniqueness theorem when <m>f</m> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <m>y(0)=0</m> occurs where the function <m>f(y)=y^\frac{2}{3}</m> fails to be differentiable.
     </p>
     <p>
-      It is important to note here the way in which <m>f(y)</m> fails to be differentiable. In particular, <m>f(y)</m> is differentiable for all <m>y\neq 0</m> and <m>\displaystyle \lim_{y \to 0^+}f'(y)\lim_{y \to 0^+}f'(y)=\infty</m>.  What is unknown then is whether it is the simple failure of the derivative exist that is the issue, or whether it is the unboundedness of the derivative that is the issue.  It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <m>\vec{f}(t,\vec{x})</m> in both variables and boundedness of the partial derivative <m>\vec{f}_x(t,\vec{x})</m>.  But we can do better!
+      But it is important to note here the way in which <m>f(y)</m> fails to be differentiable. In particular, <m>f(y)</m> is differentiable for all <m>y\neq 0</m> and <m>\displaystyle \lim_{y \to 0^+}f'(y)\lim_{y \to 0^+}f'(y)=\infty</m>.  What is unknown to us now, then, is whether it is the simple failure of the derivative exist that is the issue, or whether it is the unboundedness of the derivative that is the issue. We will turn our attention shortly to an example in order to help clarify matters for us.  But first, we begin with an important and useful inequality.
+    </p>
+    <theorem xml:id="thm-gronwall">
+      <title>Gronwall's Inequality</title>
+      <statement>
+        <p>
+          Let <m>f:[a,b] \to \mathbb{R} </m> be a non-negative function, and let there exist constants <m>A,B \ge 0</m> such that <m>f</m> satisfies
+          <me>
+            f(t) \le A + B \int_a^t f(s) \; ds
+          </me>
+          for all <m>t \in [a,b]</m>.  Then <m>f(t) \le A e^{B(t-a)}</m> for all <m>t \in [a,b]</m>.
+
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Define <m>Q:[a,b] \to \mathbb{R}</m> by <m>Q(t):=A + B \int_a^t f(s) \; ds</m> so that <m>f(t)\le Q(t)</m> for all <m>t \in [a,b]</m>.  then
+          <me>
+          Q'(t)=Bf(t) \le B Q(t) \; \; \; \forall t \in [a,b],
+          </me>
+          or equivalently, <m>Q'(t)-BQ(t) \le 0</m> for all <m>t \in [a,b]</m>.  Mulitplying both sides of the inequality by <m>e^{-B(t-a)}</m> yields
+          <me>
+          Q'(t)e^{-B(t-a)} - B e^{-B(t-a)} Q(t) \le 0 \; \; \; \forall t \in [a,b],
+          </me>
+          or equivalently
+          <me>
+            (Q(t)e^{-B(t-a)})' \le 0 \; \; \; \forall t \in [a,b].
+          </me>
+          Stated another way, we have now established that the function <m>Q(t)e^{-B(t-a)}</m> is non-increasing on <m>[a,b]</m>, and hence
+          <me>
+            Q(t)e^{-B(t-a)} \le Q(a)e^{-B(a-a)}= A \; \; \; \forall t \in [a,b].
+          </me>
+          Hence, <m>Q(t) \le A e^{B(t-a)}</m>, and since <m>f(t) \le Q(t)</m> by assumption, we have the desired result, namely <m>f(t) \le A e^{B(t-a)}</m>.
+
+        </p>
+      </proof>
+    </theorem>
+    <p>
+    At first glance, the theorem may seem of little use.  It only applies to non-negative functions which satisfy a very specific type of inequality.  However, as the next example will show us, this inequality is quite useful!
+    </p>
+    <example xml:id="exabsf">
+      <statement>
+        <p>
+          Show that the initial value problem
+          <me>
+            \left\{ \begin{array}{c}
+            y'(t)=|y(t)|, \\
+            y(0)=0,
+            \end{array} \right.
+          </me>
+        has exactly one solution.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It is clear that <m>z(t)=0</m> is a solution for all <m>t \in \mathbb{R}</m>.  Assume there is another solution, say <m>w(t)</m>.  Using the Fundamental Theorem of Calculus, <m>z(t)</m> and <m>w(t)</m> may be written as
+          <me>
+            z(t)=z(0)-\int_0^t |z(s)| \; ds = \int_0^t |z(s)| \; ds
+          </me>
+          and
+          <me>
+            w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
+          </me>
+          respectively, for all <m>t \in \mathbb{R}</m>.  Then,
+          <me>
+            |w(t)-z(t)|= \left| \int_0^t |w(s)| \; ds - \int_0^t |z(s)| \; ds \right| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \; \; \; \forall t \in \mathbb{R}.
+          </me>
+          then
+          <me>
+            \begin{align*}
+            |w(t)-z(t)| \amp = \left| \int_0^t |w(s)| - |z(s)|\\
+            \amp \le
+            \end{align*}
+          </me>
+
+        </p>
+      </solution>
+    </example>
+    <p>
+    It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <m>\vec{f}(t,\vec{x})</m> in both variables and boundedness of the partial derivative <m>\vec{f}_x(t,\vec{x})</m>.  But we can do better!
     </p>
     <p>
       As it turns out, the key necessary for existence and uniqueness is for <m>f(t,y)</m> to not change too rapidly as <m>y</m> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.
