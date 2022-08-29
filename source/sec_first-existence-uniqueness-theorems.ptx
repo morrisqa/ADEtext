@@ -130,14 +130,15 @@
           <me>
             |w(t)-z(t)|= \left| \int_0^t |w(s)| \; ds - \int_0^t |z(s)| \; ds \right| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \; \; \; \forall t \in \mathbb{R}.
           </me>
-          then
+          and, utilizing the fact that <m>\left|\int_a^b g(s)\; ds \right| \le \int_a^b |g(s)| \; ds</m>, we have
           <me>
-            \begin{align*}
-            |w(t)-z(t)| \amp = \left| \int_0^t |w(s)| - |z(s)|\\
-            \amp \le
-            \end{align*}
+            |w(t)-z(t)| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \le  \int_0^t \left| |w(s)| - |z(s)| \right| \; ds.
           </me>
-
+          Finally, we apply the reverse triangle inequality to observe that
+          <me>
+            |w(t)-z(t)| \le  \int_0^t \left| |w(s)| - |z(s)| \right| \; ds \le \int_0^t \left| w(s) - z(s) \right| \; ds.
+          </me>
+          Now, since this inequality holds for all <m>t\in\mathbb{R}</m>, we may apply Gronwall's Inequality with <m>f(t)=|w(t)-z(t)|</m>, <m>A=0</m>, and <m>B=1</m>.  Hence, <m>|w(t)-z(t)|\le 0\cdot e^{1(t-0)}=0</m>, and since <m>|w(t)-z(t)|\ge 0</m> by definition of the absolute value function, we must have <m>|w(t)-z(t)|=0</m> for all <m>t \in \mathbb{R}</m>.  This implies that <m>w(t)=z(t)</m> for all <m>t \in \mathbb{R}</m>, and hence we only have one solution.
         </p>
       </solution>
     </example>
