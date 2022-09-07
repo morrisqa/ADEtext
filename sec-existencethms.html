@@ -8,13 +8,13 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Existence &amp; Uniquess Theorem</title>
+<title>Existence Theorem</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Advanced Differential Equations">
 <meta property="book:author" content="Quinn A. Morris, Ph.D.">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +26,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -44,7 +57,13 @@ window.MathJax = {
     )}
 },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
@@ -76,11 +95,11 @@ window.MathJax = {
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-existence.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ex_first.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-cmt.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ex_first.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-existence.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ex_first.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-cmt.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ex_first.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -91,7 +110,9 @@ window.MathJax = {
 <li class="link">
 <a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Initial Value Problems</span></a><ul>
 <li><a href="section-existence.html" data-scroll="section-existence" class="internal">Motivating Examples</a></li>
-<li><a href="sec-existencethms.html" data-scroll="sec-existencethms" class="active">Existence &amp; Uniquess Theorem</a></li>
+<li><a href="sec-uniquenessthm.html" data-scroll="sec-uniquenessthm" class="internal">Uniquess Theorem</a></li>
+<li><a href="section-cmt.html" data-scroll="section-cmt" class="internal">Contraction Mapping Theorem</a></li>
+<li><a href="sec-existencethms.html" data-scroll="sec-existencethms" class="active">Existence Theorem</a></li>
 <li><a href="ex_first.html" data-scroll="ex_first" class="internal">Exercises</a></li>
 </ul>
 </li>
@@ -105,222 +126,20 @@ window.MathJax = {
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-existencethms"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Existence &amp; Uniquess Theorem</span>
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Existence Theorem</span>
 </h2>
-<section class="subsection" id="subsec-prelim"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Some Preliminaries</span>
+<pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">@interact
+def _(f=input_box((1/((1/alpha)-x),width=20),
+  color=color_selector(widget='colorpicker', label=""),
+  axes=True,
+  fill=True,
+  zoom=slider(1,100,default=1):
+  show(plot(f,x,0, 1), color=color, axes=axes,fill=fill))
+</script></pre>
+<article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
 </h3>
-<p id="p-22">Before we can discuss existence and uniqueness theorems for initial value problems, we must first spend some time discussing properties of functions and sets of functions.  Before we can proceed, however, it is important that we are clear about what a differential equation is and what we mean when we say that a function is a solution to a particular differential equation. <article class="definition definition-like" id="def-de"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
-</h4>
-<p id="p-23">An ordinary differential equation of order <span class="process-math">\(n\)</span> is an equation of the form</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-F(t,x(t),x'(t), \ldots, x^{(n)}(t))=0,
-\end{equation*}
-</div>
-<p class="continuation">where <span class="process-math">\(F:\mathbb{R}^{n+1} \to \mathbb{R}\)</span> is a function.  The differential equation is said to be in normal form if it can be written in the form</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-x^{(n)}(t)=f(t,x(t),x'(t), \ldots, x^{(n-1)}(t)).
-\end{equation*}
-</div></article> <p id="p-24">Every differential equation of order <span class="process-math">\(n\)</span> which is written in normal form can be converted into an <span class="process-math">\(n\)</span>-dimensional system of first order differential equations, as we illustrate in the next example.</p> <article class="example example-like" id="ex1-1"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
-</h4>
-<p id="p-25">Rewrite the second-order differential equation</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-x''(t)  + x'(t) \cdot x(t) = 0
-\end{equation*}
-</div>
-<p class="continuation">as a system of two first-order differential equations.</p>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like">
-<p id="p-26">Let <span class="process-math">\(x_1(t)=x(t)\)</span> and <span class="process-math">\(x_2(t)=x'(t)\text{.}\)</span>  Then <span class="process-math">\(x_1'(t)=x'(t)=x_2(t)\)</span> and <span class="process-math">\(x_2'(t)=x''(t)=-x'(t) \cdot x(t) = x_2(t)\cdot x_1(t)\text{.}\)</span>  Hence, we can rewrite the second-order differential equation as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\left\{ \begin{array}{l} x_1'(t)=x_2(t) \\ x_2'(t)=x_2(t)\cdot x_1(t) \end{array} \right.
-\end{equation*}
-</div>
-</div></div>
-</div></article> In this section (and the next few sections), we will concern ourselves with initial value problems of the form</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="eq-picard">
-\begin{equation}
-\left\{ \begin{array}{l} x^\prime = f(t,x) \\ x(\alpha)=\beta \end{array} \right.\tag{1.2.1}
-\end{equation}
-</div>
-<p class="continuation">where <span class="process-math">\(\alpha,\beta \in \mathbb{R}\)</span> and <span class="process-math">\(f:D \to \mathbb{R}^n\)</span> is a continuous function defined on an open set <span class="process-math">\(D=I \times \mathbb{R} \subset \mathbb{R}^2\)</span> with <span class="process-math">\(\alpha \in I\text{.}\)</span></p>
-<p id="p-27">It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <span class="process-math">\(n\)</span> can be rewritten as a system of <span class="process-math">\(n\)</span> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.</p></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Uniqueness of Solutions</span>
-</h3>
-<p id="p-28">As <a href="" class="xref" data-knowl="./knowl/ex2.html" title="Example 1.1.2">Example 1.1.2</a> showed, continuity of <span class="process-math">\(\vec{f}\)</span> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ex2.html">
-\begin{equation*}
-\left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
-\end{equation*}
-</div>
-<p class="continuation">Clearly we need to seek out a more stringent criteria for <span class="process-math">\(f\)</span> than just continuity if we want to ensure that the initial value problem has a unique solution.  Our natural intuition from calculus may suggest to us that we try to establish a uniqueness theorem when <span class="process-math">\(f\)</span> is differentiable.  This is quite a reasonable hypothesis, particularly since we note that the failure of uniqueness occurs when the initial value <span class="process-math">\(y(0)=0\)</span> occurs where the function <span class="process-math">\(f(y)=y^\frac{2}{3}\)</span> fails to be differentiable.</p>
-<p id="p-29">But it is important to note here the way in which <span class="process-math">\(f(y)\)</span> fails to be differentiable. In particular, <span class="process-math">\(f(y)\)</span> is differentiable for all <span class="process-math">\(y\neq 0\)</span> and <span class="process-math">\(\displaystyle \lim_{y \to 0^+}f'(y)\lim_{y \to 0^+}f'(y)=\infty\text{.}\)</span>  What is unknown to us now, then, is whether it is the simple failure of the derivative exist that is the issue, or whether it is the unboundedness of the derivative that is the issue. We will turn our attention shortly to an example in order to help clarify matters for us.  But first, we begin with an important and useful inequality.</p>
-<article class="theorem theorem-like" id="thm-gronwall"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Gronwall's Inequality.</span>
-</h4>
-<p id="p-30">Let <span class="process-math">\(f:[a,b] \to \mathbb{R} \)</span> be a non-negative function, and let there exist constants <span class="process-math">\(A,B \ge 0\)</span> such that <span class="process-math">\(f\)</span> satisfies</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-f(t) \le A + B \int_a^t f(s) \; ds
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  Then <span class="process-math">\(f(t) \le A e^{B(t-a)}\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span></p></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-31">Define <span class="process-math">\(Q:[a,b] \to \mathbb{R}\)</span> by <span class="process-math">\(Q(t):=A + B \int_a^t f(s) \; ds\)</span> so that <span class="process-math">\(f(t)\le Q(t)\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  then</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-Q'(t)=Bf(t) \le B Q(t) \; \; \; \forall t \in [a,b],
-\end{equation*}
-</div>
-<p class="continuation">or equivalently, <span class="process-math">\(Q'(t)-BQ(t) \le 0\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  Mulitplying both sides of the inequality by <span class="process-math">\(e^{-B(t-a)}\)</span> yields</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-Q'(t)e^{-B(t-a)} - B e^{-B(t-a)} Q(t) \le 0 \; \; \; \forall t \in [a,b],
-\end{equation*}
-</div>
-<p class="continuation">or equivalently</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-(Q(t)e^{-B(t-a)})' \le 0 \; \; \; \forall t \in [a,b].
-\end{equation*}
-</div>
-<p class="continuation">Stated another way, we have now established that the function <span class="process-math">\(Q(t)e^{-B(t-a)}\)</span> is non-increasing on <span class="process-math">\([a,b]\text{,}\)</span> and hence</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-Q(t)e^{-B(t-a)} \le Q(a)e^{-B(a-a)}= A \; \; \; \forall t \in [a,b].
-\end{equation*}
-</div>
-<p class="continuation">Hence, <span class="process-math">\(Q(t) \le A e^{B(t-a)}\text{,}\)</span> and since <span class="process-math">\(f(t) \le Q(t)\)</span> by assumption, we have the desired result, namely <span class="process-math">\(f(t) \le A e^{B(t-a)}\text{.}\)</span></p></article></div>
-<p id="p-32">At first glance, the theorem may seem of little use.  It only applies to non-negative functions which satisfy a very specific type of inequality.  However, as the next example will show us, this inequality is quite useful!</p>
-<article class="example example-like" id="exabsf"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
-</h4>
-<p id="p-33">Show that the initial value problem</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\left\{ \begin{array}{c}
-y'(t)=|y(t)|, \\
-y(0)=0,
-\end{array} \right.
-\end{equation*}
-</div>
-<p class="continuation">has exactly one solution.</p>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like">
-<p id="p-34">It is clear that <span class="process-math">\(z(t)=0\)</span> is a solution for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  Assume there is another solution, say <span class="process-math">\(w(t)\text{.}\)</span>  Using the Fundamental Theorem of Calculus, <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(w(t)\)</span> may be written as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-z(t)=z(0)-\int_0^t |z(s)| \; ds = \int_0^t |z(s)| \; ds
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-w(t)=w(0)-\int_0^t |w(s)| \; ds = \int_0^t |w(s)| \; ds,
-\end{equation*}
-</div>
-<p class="continuation">respectively, for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  Then,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-|w(t)-z(t)|= \left| \int_0^t |w(s)| \; ds - \int_0^t |z(s)| \; ds \right| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \; \; \; \forall t \in \mathbb{R}.
-\end{equation*}
-</div>
-<p class="continuation">and, utilizing the fact that <span class="process-math">\(\left|\int_a^b g(s)\; ds \right| \le \int_a^b |g(s)| \; ds\text{,}\)</span> we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-|w(t)-z(t)| = \left| \int_0^t |w(s)| - |z(s)| \; ds \right| \le  \int_0^t \left| |w(s)| - |z(s)| \right| \; ds.
-\end{equation*}
-</div>
-<p class="continuation">Finally, we apply the reverse triangle inequality to observe that</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-|w(t)-z(t)| \le  \int_0^t \left| |w(s)| - |z(s)| \right| \; ds \le \int_0^t \left| w(s) - z(s) \right| \; ds.
-\end{equation*}
-</div>
-<p class="continuation">Now, since this inequality holds for all <span class="process-math">\(t\in\mathbb{R}\text{,}\)</span> we may apply Gronwall's Inequality with <span class="process-math">\(f(t)=|w(t)-z(t)|\text{,}\)</span> <span class="process-math">\(A=0\text{,}\)</span> and <span class="process-math">\(B=1\text{.}\)</span>  Hence, <span class="process-math">\(|w(t)-z(t)|\le 0\cdot e^{1(t-0)}=0\text{,}\)</span> and since <span class="process-math">\(|w(t)-z(t)|\ge 0\)</span> by definition of the absolute value function, we must have <span class="process-math">\(|w(t)-z(t)|=0\)</span> for all <span class="process-math">\(t \in \mathbb{R}\text{.}\)</span>  This implies that <span class="process-math">\(w(t)=z(t)\)</span> for all <span class="process-math">\(t \in \mathbb{R}\text{,}\)</span> and hence we only have one solution.</p>
-</div></div>
-</div></article><p id="p-35">This is great news!  We have shown in <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.4">Example 1.2.4</a> that (1) a solution exists (by finding a solution directly) and (2) that the solution we found is the only solution!  Additionally, the work provides a roadmap for proceeding toward a more general proof of a uniqueness theorem.  Before moving on, consider how the work in <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.4">Example 1.2.4</a> would change if the right-hand side of the differential equation were changed from <span class="process-math">\(|y(t)|\)</span> to a more general <span class="process-math">\(f(t,y)\text{.}\)</span> While we would not know whether a solution existed for the more general equation, we could still endeavor to show that if we have two solutions, say <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(w(t)\text{,}\)</span> then we must have <span class="process-math">\(z(t)=w(t)\text{.}\)</span> Virtually all of our work would proceed the same, until we reached our use of the reverse triangle inequality.  In <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.4">Example 1.2.4</a>, we used</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/exabsf.html ./knowl/exabsf.html ./knowl/exabsf.html">
-\begin{equation*}
-\left| | w(t)| - |z(t)| \right| \le \left| w(t)-z(t) \right|,
-\end{equation*}
-</div>
-<p class="continuation">the reverse triangle inequality.  Now, however, we needed</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/exabsf.html ./knowl/exabsf.html ./knowl/exabsf.html">
-\begin{equation*}
-\left| f(t,w(t))-f(t,z(t)) \right| \le K \left|w(t)-z(t)\right|.
-\end{equation*}
-</div>
-<p class="continuation">Note that the inclusion of an additional constant <span class="process-math">\(K&gt;0\)</span> will not affect our work, since it will simply be included in the exponent when Gronwall's Inequality is applied.</p>
-<p id="p-36">So, what functions, if any, satisfy this inequality and how we think of them?  Before we answer this question, let's give functions satisfying this condition a name.</p>
-<article class="definition definition-like" id="def-lipschitz"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
-</h4>
-<p id="p-37">A function <span class="process-math">\(f:I \times \mathbb{R} \to\mathbb{R}^n\)</span> is said to satisfy a <dfn class="terminology">Lipschitz condition with respect to <span class="process-math">\(x\)</span></dfn> on the open set <span class="process-math">\(I \times R \subset \mathbb{R}^2\)</span> if, for any rectangle</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R},
-\end{equation*}
-</div>
-<p class="continuation">there exists a constant <span class="process-math">\(K\)</span> (depending on <span class="process-math">\(\Omega\)</span>) such that</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\left|f(t,x)-f(t,y)\right|\le K|x-y|
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\((t,x),(t,y) \in \Omega\text{.}\)</span></p></article><p id="p-38">Having defined such things, it would be helpful now to convince ourselves that such functions actually exist!  What a terrible situation we would be in if the very type of functions we needed did not, in fact, exist!</p>
-<article class="example example-like" id="abs_is_lip"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
-</h4>
-<p id="p-39">Show that the function <span class="process-math">\(f(t,y)=|y|\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(y\)</span> with <span class="process-math">\(K=1\text{.}\)</span></p>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
-<p id="p-40">By the reverse triangle inequality, we have</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\left|f(t,x)-f(t,y)\right| = \left| |x|-|y| \right| \le |x-y|.
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\((t,y)\in \mathbb{R}^2.\)</span>  Hence, <span class="process-math">\(f(t,y)\)</span> satisfies a Lipschitz condition with <span class="process-math">\(K=1.\)</span></p>
-</div></div>
-</div></article><article class="example example-like" id="example-7"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
-</h4>
-<p id="p-41">Show that the function <span class="process-math">\(f(t,y)=t^2 y^3\)</span> satisfies a Lipschitz condition.</p>
-<div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">
-<p id="p-42">This example is a bit trickier than <a href="" class="xref" data-knowl="./knowl/abs_is_lip.html" title="Example 1.2.6">Example 1.2.6</a> because our constant <span class="process-math">\(K\)</span> will depend on <span class="process-math">\(\Omega\)</span> in this case.  Let</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
-\begin{equation*}
-\Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R}.
-\end{equation*}
-</div>
-<p class="continuation">Then, for all <span class="process-math">\((t,y) \in \Omega\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
-\begin{equation*}
-\left|f(t,x)-f(t,y)\right| = \left| t^2x^3-t^2y^3 \right| =|t^2| |x^3-y^3|=|t^2||3\xi ^2| |x-y|.
-\end{equation*}
-</div>
-<p class="continuation">for some <span class="process-math">\(\xi \in (x_0-b,x_0+b)\)</span> by the Mean Value Theorem.  Let <span class="process-math">\(A=max\{|t_0-a|,|t_0+a|\}\)</span> and let <span class="process-math">\(B=max\{|x_0-b|,|x_0+b|\}\text{.}\)</span>  Then,</p>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
-\begin{equation*}
-\left|f(t,x)-f(t,y)\right| = |t^2||3\xi ^2| |x-y| \le A^2\cdot 3B^2 |x-y|,
-\end{equation*}
-</div>
-<p class="continuation">for all <span class="process-math">\((t,y)\in\Omega\text{.}\)</span>  Hence, <span class="process-math">\(f(t,y)\)</span> satisfies a Lipschitz condition.</p>
-</div></div>
-</div></article><article class="fact theorem-like" id="fact-"><h4 class="heading">
-<span class="type">Fact</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
-</h4>
-<p id="p-43">If <span class="process-math">\(f(t,y)\)</span> has a continuous derivative with respect to <span class="process-math">\(y\text{,}\)</span> then <span class="process-math">\(f\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(y\text{.}\)</span>  A version of this statement will be proven in the exercises.</p></article><p id="p-44">It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <span class="process-math">\(\vec{f}(t,\vec{x})\)</span> in both variables and boundedness of the partial derivative <span class="process-math">\(\vec{f}_x(t,\vec{x})\text{.}\)</span>  But we can do better!</p>
-<p id="p-45">As it turns out, the key necessary for existence and uniqueness is for <span class="process-math">\(f(t,y)\)</span> to not change too rapidly as <span class="process-math">\(y\)</span> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.</p></section><article class="theorem theorem-like" id="thm-picard"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Picard's Existence &amp; Uniqueness Theorem.</span>
-</h3>
-<p id="p-46">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-47">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
+<p id="p-57">If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-basic.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p></article><article class="hiddenproof" id="proof-2"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-58">The proof of this theorem relies on the Contraction Mapping Theorem.</p></article></div></section></div></main>
 </div>
 </body>
 </html>

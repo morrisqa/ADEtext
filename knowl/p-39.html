@@ -11,8 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Show that the function <span class="process-math">\(f(t,y)=|y|\)</span> satisfies a Lipschitz condition with respect to <span class="process-math">\(y\)</span> with <span class="process-math">\(K=1\text{.}\)</span></p>
-<span class="incontext"><a href="sec-existencethms.html#p-39" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>This is great news!  We have shown in <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.5">Example 1.2.5</a> that (1) a solution exists (by finding a solution directly) and (2) that the solution we found is the only solution!  Additionally, the work provides a roadmap for proceeding toward a more general proof of a uniqueness theorem.  Before moving on, consider how the work in <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.5">Example 1.2.5</a> would change if the right-hand side of the differential equation were changed from <span class="process-math">\(|y(t)|\)</span> to a more general <span class="process-math">\(f(t,y)\text{.}\)</span> While we would not know whether a solution existed for the more general equation, we could still endeavor to show that if we have two solutions, say <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(w(t)\text{,}\)</span> then we must have <span class="process-math">\(z(t)=w(t)\text{.}\)</span> Virtually all of our work would proceed the same, until we reached our use of the reverse triangle inequality.  In <a href="" class="xref" data-knowl="./knowl/exabsf.html" title="Example 1.2.5">Example 1.2.5</a>, we used</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exabsf.html ./knowl/exabsf.html ./knowl/exabsf.html">
+\begin{equation*}
+\left| | w(t)| - |z(t)| \right| \le \left| w(t)-z(t) \right|,
+\end{equation*}
+</div>
+<p class="continuation">the reverse triangle inequality.  Now, however, we needed</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exabsf.html ./knowl/exabsf.html ./knowl/exabsf.html">
+\begin{equation*}
+\left| f(t,w(t))-f(t,z(t)) \right| \le K \left|w(t)-z(t)\right|.
+\end{equation*}
+</div>
+<p class="continuation">Note that the inclusion of an additional constant <span class="process-math">\(K&gt;0\)</span> will not affect our work, since it will simply be included in the exponent when Gronwall's Inequality is applied.</p>
+<span class="incontext"><a href="sec-uniquenessthm.html#p-39" class="internal">in-context</a></span>
 </body>
 </html>

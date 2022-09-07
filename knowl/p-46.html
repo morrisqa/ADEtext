@@ -11,8 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>If <span class="process-math">\(\vec{f}\)</span> satisfies a Lipschitz condition  with respect to <span class="process-math">\(x\text{,}\)</span> then <a href="" class="xref" data-knowl="./knowl/eq-picard.html" title="Equation 1.2.1">(1.2.1)</a> has a unique solution in a neighborhood of <span class="process-math">\(t=\alpha\text{.}\)</span></p>
-<span class="incontext"><a href="sec-existencethms.html#p-46" class="internal">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>This example is a bit trickier than <a href="" class="xref" data-knowl="./knowl/abs_is_lip.html" title="Example 1.2.7">Example 1.2.7</a> because our constant <span class="process-math">\(K\)</span> will depend on <span class="process-math">\(\Omega\)</span> in this case.  Let</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
+\begin{equation*}
+\Omega:=\{(t,x) \mid |t-t_0|\le a, \; \|x-x_0\| \le b \} \subset I \times \mathbb{R}.
+\end{equation*}
+</div>
+<p class="continuation">Then, for all <span class="process-math">\((t,y) \in \Omega\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
+\begin{equation*}
+\left|f(t,x)-f(t,y)\right| = \left| t^2x^3-t^2y^3 \right| =|t^2| |x^3-y^3|=|t^2||3\xi ^2| |x-y|.
+\end{equation*}
+</div>
+<p class="continuation">for some <span class="process-math">\(\xi \in (x_0-b,x_0+b)\)</span> by the Mean Value Theorem.  Let <span class="process-math">\(A=max\{|t_0-a|,|t_0+a|\}\)</span> and let <span class="process-math">\(B=max\{|x_0-b|,|x_0+b|\}\text{.}\)</span>  Then,</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/abs_is_lip.html">
+\begin{equation*}
+\left|f(t,x)-f(t,y)\right| = |t^2||3\xi ^2| |x-y| \le A^2\cdot 3B^2 |x-y|,
+\end{equation*}
+</div>
+<p class="continuation">for all <span class="process-math">\((t,y)\in\Omega\text{.}\)</span>  Hence, <span class="process-math">\(f(t,y)\)</span> satisfies a Lipschitz condition.</p>
+<span class="incontext"><a href="sec-uniquenessthm.html#p-46" class="internal">in-context</a></span>
 </body>
 </html>

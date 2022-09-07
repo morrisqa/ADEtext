@@ -11,32 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Define <span class="process-math">\(Q:[a,b] \to \mathbb{R}\)</span> by <span class="process-math">\(Q(t):=A + B \int_a^t f(s) \; ds\)</span> so that <span class="process-math">\(f(t)\le Q(t)\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  then</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-Q'(t)=Bf(t) \le B Q(t) \; \; \; \forall t \in [a,b],
-\end{equation*}
-</div>
-<p class="continuation">or equivalently, <span class="process-math">\(Q'(t)-BQ(t) \le 0\)</span> for all <span class="process-math">\(t \in [a,b]\text{.}\)</span>  Mulitplying both sides of the inequality by <span class="process-math">\(e^{-B(t-a)}\)</span> yields</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-Q'(t)e^{-B(t-a)} - B e^{-B(t-a)} Q(t) \le 0 \; \; \; \forall t \in [a,b],
-\end{equation*}
-</div>
-<p class="continuation">or equivalently</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-(Q(t)e^{-B(t-a)})' \le 0 \; \; \; \forall t \in [a,b].
-\end{equation*}
-</div>
-<p class="continuation">Stated another way, we have now established that the function <span class="process-math">\(Q(t)e^{-B(t-a)}\)</span> is non-increasing on <span class="process-math">\([a,b]\text{,}\)</span> and hence</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-Q(t)e^{-B(t-a)} \le Q(a)e^{-B(a-a)}= A \; \; \; \forall t \in [a,b].
-\end{equation*}
-</div>
-<p class="continuation">Hence, <span class="process-math">\(Q(t) \le A e^{B(t-a)}\text{,}\)</span> and since <span class="process-math">\(f(t) \le Q(t)\)</span> by assumption, we have the desired result, namely <span class="process-math">\(f(t) \le A e^{B(t-a)}\text{.}\)</span></p>
-<span class="incontext"><a href="sec-existencethms.html#p-31" class="internal">in-context</a></span>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<p>From the perspective of being able to find an explicit solution, this correspondence between differential and integral equations is not particularly helpful.  However, when trying to prove things about the existence or uniqueness of solutions (or about qualitative properties of solutions), this can be quite helpful as we will observe in the next few sections.</p>
+<span class="incontext"><a href="sec-uniquenessthm.html#p-31" class="internal">in-context</a></span>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Advanced Differential Equations">
 <meta property="book:author" content="Quinn A. Morris, Ph.D.">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -26,6 +26,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -91,7 +104,9 @@ window.MathJax = {
 <li class="link">
 <a href="ch_first.html" data-scroll="ch_first" class="internal"><span class="codenumber">1</span> <span class="title">Initial Value Problems</span></a><ul>
 <li><a href="section-existence.html" data-scroll="section-existence" class="internal">Motivating Examples</a></li>
-<li><a href="sec-existencethms.html" data-scroll="sec-existencethms" class="internal">Existence &amp; Uniquess Theorem</a></li>
+<li><a href="sec-uniquenessthm.html" data-scroll="sec-uniquenessthm" class="internal">Uniquess Theorem</a></li>
+<li><a href="section-cmt.html" data-scroll="section-cmt" class="internal">Contraction Mapping Theorem</a></li>
+<li><a href="sec-existencethms.html" data-scroll="sec-existencethms" class="internal">Existence Theorem</a></li>
 <li><a href="ex_first.html" data-scroll="ex_first" class="internal">Exercises</a></li>
 </ul>
 </li>
@@ -111,7 +126,7 @@ window.MathJax = {
 <div class="author-name">Quinn A. Morris, Ph.D.</div>
 <div class="author-info">Department of Mathematical Sciences<br>Appalachian State University</div>
 </div>
-<div class="date">August 29, 2022</div>
+<div class="date">September 7, 2022</div>
 <nav class="summary-links"><ul><li><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></li></ul></nav></section></div></main>
 </div>
 </body>
