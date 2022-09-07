@@ -36,7 +36,7 @@
          </me>
        </p>
 
-       <image source="CMTIllustration" />
+       <image source="chapter1/CMTIllustration" />
 
       <example xml:id="ex-fixed-point">
         <statement>
