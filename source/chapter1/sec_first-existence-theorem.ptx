@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-existencethms">
+  <title>Existence Theorem</title>
+
+
+        <sage>
+          <input>
+            @interact
+            def _(f=input_box((1/((1/alpha)-x),width=20),
+              color=color_selector(widget='colorpicker', label=""),
+              axes=True,
+              fill=True,
+              zoom=slider(1,100,default=1):
+              show(plot(f,x,0, 1), color=color, axes=axes,fill=fill))
+          </input>
+        </sage>
+
+
+  <theorem xml:id="thm-picard">
+    <title>Picard's Existence &amp; Uniqueness Theorem</title>
+    <statement>
+        <p>
+          If <m>\vec{f}</m> satisfies a Lipschitz condition  with respect to <m>x</m>, then <xref ref="eq-basic" /> has a unique solution in a neighborhood of <m>t=\alpha</m>.
+        </p>
+    </statement>
+    <proof>
+      <p>
+        The proof of this theorem relies on the Contraction Mapping Theorem.
+      </p>
+    </proof>
+  </theorem>
+</section>

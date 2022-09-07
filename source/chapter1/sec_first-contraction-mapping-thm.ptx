@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <section xml:id="section-cmt">
+    <title>Contraction Mapping Theorem</title>
+
+      <p>Suppose you are given the task of finding all solution to the vector equation
+      <men xml:id="eq-cmt1">
+        \left[ \begin{array}{c} x \\ y \end{array} \right] = \left[ \begin{array}{c} \frac{1}{2} \sin (y) \\ \frac{1}{2} \cos(x) \end{array} \right].
+      </men>
+      You might fumble around for a bit, searching for a method of solving these, attempting to solve for one of the variables and then substituting in to find the other.  Indeed, this is the usual method of solving a system (particularly a linear system, which this is not) presented in many math courses.  However, in this case, we will take a slightly different approach.
+       </p>
+       <p>
+         Consider the function <m>T:\mathbb{R}^2 \to \mathbb{R}^2</m> which is defined by
+         <me>
+           T \left(\left[ \begin{array}{c} x \\ y \end{array} \right] \right) = \left[ \begin{array}{c} \frac{1}{2} \sin (y) \\ \frac{1}{2} \cos(x) \end{array} \right].
+         </me>
+         Note that solutions to our original equation are now points which satisfy
+         <me>
+           \left[ \begin{array}{c} x \\ y \end{array} \right] = T \left(\left[ \begin{array}{c} x \\ y \end{array} \right]\right).
+         </me>
+         Such a point is called a fixed point of the map <m>T</m>, and the main focus of this section will be to find fixed points of maps which correspond to solutions of equations (for now, a vector equation, and then later, a differential equation) which we're interested in.
+       </p>
+
+         <definition xml:id="def-fixed-point">
+           <statement>
+             <p>
+               Let <m>X</m> be a set and let <m>T:X \to X</m> be a function.  A point <m>x \in X</m> is called a <term> fixed point of <m>T</m></term> if <m>T(x)=x</m>.
+             </p>
+           </statement>
+         </definition>
+
+         <p>
+         In this case, we'd like to try to identify a fixed point of our map <m>T</m>, as that would be equivalent to finding a solution to <xref ref="eq-cmt1"/>.  Finding a fixed point, however, still remains a challenge.  First, we may observe that if <m>\left[ \begin{array}{c} x \\ y \end{array} \right]</m> is a fixed point, then <m>-\frac{1}{2}\le x \le \frac{1}{2} </m> and <m>-\frac{1}{2}\le y \le \frac{1}{2} </m> since <m>x=\frac{1}{2}\sin(y)</m> and <m>y=\frac{1}{2}\cos(x)</m>.  So, let's look at what happens to all vectors in the set
+         <me>
+           \left\{\left[ \begin{array}{c} x \\ y \end{array} \right] \mid -\frac{1}{2}\le x \le \frac{1}{2} \text{ and } -\frac{1}{2}\le y \le \frac{1}{2} \right\}.
+         </me>
+       </p>
+
+       <image source="CMTIllustration" />
+
+      <example xml:id="ex-fixed-point">
+        <statement>
+          <p>
+            Show that the differential equation
+            <me>
+              \left\{ \begin{array}{l} y''=y \\ y(0)=0 \\ y'(0)=3 \end{array} \right.
+            </me>
+            has a solution.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since the differential equation <m>y''=y</m> is linear with constant coefficients, we could consider its characteristic equation, find the roots, and use those to write down a solution.  The initial conditions would then be used to find unknown constants.</p>
+
+            <p>For this problem, however, such a method is likely unnecessary.  We may observe that we know two linearly independent functions, namely <m>y_1(x)=\sin(x)</m> and <m>y_2(x)=\cos(x)</m>, which satisfy <m>y''=y</m>.  Hence, any solution must be of the form <m>y(t)=c_1y_1(t) + c_2y_2(t)</m>, and the initial conditions are again used to find the unknown constants <m>c_1</m> and <m>c_2</m>.</p>
+
+            <p>In this case, the reader should find that <m>y(t)=3\sin(t)</m> is a solution.  What is harder to show is that this is the <em>only</em>  solution.
+          </p>
+        </solution>
+      </example>
+
+
+
+  </section>

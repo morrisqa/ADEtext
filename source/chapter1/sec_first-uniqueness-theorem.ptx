@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-existencethms">
-  <title>Existence &amp; Uniquess Theorem</title>
-  <subsection xml:id="subsec-prelim">
+<section xml:id="sec-uniquenessthm">
+<title>Uniquess Theorem</title>
+<subsection xml:id="subsec-prelim">
     <title>Some Preliminaries</title>
-    <p>
+      <p>
       Before we can discuss existence and uniqueness theorems for initial value problems, we must first spend some time discussing properties of functions and sets of functions.  Before we can proceed, however, it is important that we are clear about what a differential equation is and what we mean when we say that a function is a solution to a particular differential equation.
+    </p>
       <definition xml:id="def-de">
        <statement>
          <p>
@@ -44,10 +45,10 @@
         </p>
       </solution>
     </example>
-
+    <p>
       In this section (and the next few sections), we will concern ourselves with initial value problems of the form
 
-        <men xml:id="eq-picard">
+        <men xml:id="eq-basic">
           \left\{ \begin{array}{l} x^\prime = f(t,x) \\ x(\alpha)=\beta \end{array} \right.
         </men>
         where <m>\alpha,\beta \in \mathbb{R}</m> and <m>f:D \to \mathbb{R}^n</m> is a continuous function defined on an open set <m> D=I \times \mathbb{R} \subset \mathbb{R}^2</m> with <m>\alpha \in I</m>.
@@ -55,13 +56,32 @@
     <p>
       It is reasonable to ask why we restrict ourselves to single first order ordinary differential equations.  There are two reasons: first, as we observed earlier, every differential equation of order <m>n</m> can be rewritten as a system of <m>n</m> first-order equations.  Working with systems, while not that different from single equations, does require a bit more knowledge of linear algebra.  So, instead of working with systems, we will work with single equations.  For those interested in systems, the good news is that not much changes in many results (or their associated proofs) from the single equation case.
     </p>
+ <p>
+      One technique that we will rely on heavily is the ability to turn a differential equation into an integral equation.
+    </p>
+    <theorem xml:id="thm-correspondence">
+      <statement>
+        <p>
+          A function <m>x(t)</m> is a solution to <xref ref="eq-basic" /> on the interval <m>(a,b)</m> if and only if
+          <me>
+            x(t)=\beta + \int_\alpha^t f(s,x(s)) \; ds
+          </me>
+          for all <m>t \in (a,b)</m>.
+
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      From the perspective of being able to find an explicit solution, this correspondence between differential and integral equations is not particularly helpful.  However, when trying to prove things about the existence or uniqueness of solutions (or about qualitative properties of solutions), this can be quite helpful as we will observe in the next few sections.
+    </p>
+
 
     </subsection>
 
-    <subsection xml:id="subsec-">
+    <subsection xml:id="subsec-uniq">
       <title>Uniqueness of Solutions</title>
     <p>
-      As <xref ref="ex2" /> showed, continuity of <m>\vec{f}</m> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,
+      As <xref ref="ex2" /> showed, continuity of <m>f</m> is not enough to guarantee the uniqueness of the solution. It's worth recalling the problem here, which was,
       <me>
         \left\{ \begin{array}{l} y'=y^{\frac{2}{3}} \\ y(0)=0 \end{array} \right.
       </me>
@@ -219,7 +239,7 @@
        </p>
      </solution>
    </example>
-   <fact xml:id="fact-">
+   <fact xml:id="fact-1">
      <statement>
        <p>
          If <m>f(t,y)</m> has a continuous derivative with respect to <m>y</m>, then <m>f</m> satisfies a Lipschitz condition with respect to <m>y</m>.  A version of this statement will be proven in the exercises.
@@ -227,27 +247,11 @@
      </statement>
    </fact>
     <p>
-    It turns out that the issue is, in fact, the latter.  We can prove that an initial value problem has a unique solution if we assume continuity of <m>\vec{f}(t,\vec{x})</m> in both variables and boundedness of the partial derivative <m>\vec{f}_x(t,\vec{x})</m>.  But we can do better!
-    </p>
-    <p>
-      As it turns out, the key necessary for existence and uniqueness is for <m>f(t,y)</m> to not change too rapidly as <m>y</m> varies.  There are many ways to quantify this (one being the boundedness of the partial derivative as discussed above), but we will use the notion of a Lipschitz condition, which we defined below.
+    It turns out that the Lipschitz condition is exactly what we need to ensure uniqueness of solutions!  The issue from <xref ref="ex2" /> was not that the function simply failed to be differentiable, but rather that the nonlinearity <m>f(t,y)=y^{\frac{2}{3}}</m> did not satisfy a Lipschitz condition on any region containing <m>y=0</m>.
     </p>
 
 
-  </subsection>
+</subsection>
 
 
-  <theorem xml:id="thm-picard">
-    <title>Picard's Existence &amp; Uniqueness Theorem</title>
-    <statement>
-        <p>
-          If <m>\vec{f}</m> satisfies a Lipschitz condition  with respect to <m>x</m>, then <xref ref="eq-picard" /> has a unique solution in a neighborhood of <m>t=\alpha</m>.
-        </p>
-    </statement>
-    <proof>
-      <p>
-        The proof of this theorem relies on the Contraction Mapping Theorem.
-      </p>
-    </proof>
-  </theorem>
 </section>

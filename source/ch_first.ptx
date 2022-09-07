@@ -16,9 +16,11 @@
   <!-- with organization to include them as separate files.      -->
   <!-- That way it is easy to include the section in a different -->
   <!-- chapter later if you change your mind about the order.    -->
-  <xi:include href="./sec_first-motivating-example.ptx" />
-  <xi:include href="./sec_first-existence-uniqueness-theorems.ptx" />
+  <xi:include href="./chapter1/sec_first-motivating-example.ptx" />
+ <xi:include href="./chapter1/sec_first-uniqueness-theorem.ptx" />
+ <xi:include href="./chapter1/sec_first-contraction-mapping-thm.ptx" />
+  <xi:include href="./chapter1/sec_first-existence-theorem.ptx" />
 
   <!-- One or more of the sections of a chapter might be exercises-->
-  <xi:include href="./ex_first.ptx"/>
+  <xi:include href="./chapter1/ex_first.ptx"/>
 </chapter>
